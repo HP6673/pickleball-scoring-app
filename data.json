@@ -1448,9 +1448,9 @@
           15,
           16
         ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false
+        "scoreA": 8,
+        "scoreB": 11,
+        "completed": true
       }
     ],
     "createdAt": "2026-09-06T06:08:57.470Z"
