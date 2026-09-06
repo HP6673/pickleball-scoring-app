@@ -764,9 +764,9 @@
           5,
           6
         ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false
+        "scoreA": 2,
+        "scoreB": 11,
+        "completed": true
       },
       {
         "id": 31,
