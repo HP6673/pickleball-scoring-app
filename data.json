@@ -4,41 +4,41 @@
     "players": [
       {
         "id": 1,
-        "name": "1"
+        "name": "John"
       },
       {
         "id": 2,
-        "name": "2"
+        "name": "Jack"
       },
       {
         "id": 3,
-        "name": "3"
+        "name": "Jay"
       },
       {
         "id": 4,
-        "name": "4"
+        "name": "Bob"
       },
       {
         "id": 5,
-        "name": "5"
+        "name": "Billy"
       },
       {
         "id": 6,
-        "name": "6"
+        "name": "Mark"
       },
       {
         "id": 7,
-        "name": "7"
+        "name": "Marshall"
       },
       {
         "id": 8,
-        "name": "8"
+        "name": "Noah"
       }
     ],
     "teams": [
       {
         "id": 1,
-        "name": "1 / 2",
+        "name": "John / Jack",
         "playerIds": [
           1,
           2
@@ -46,7 +46,7 @@
       },
       {
         "id": 2,
-        "name": "3 / 4",
+        "name": "Jay / Bob",
         "playerIds": [
           3,
           4
@@ -54,7 +54,7 @@
       },
       {
         "id": 3,
-        "name": "5 / 6",
+        "name": "Billy / Mark",
         "playerIds": [
           5,
           6
@@ -62,7 +62,7 @@
       },
       {
         "id": 4,
-        "name": "7 / 8",
+        "name": "Marshall / Noah",
         "playerIds": [
           7,
           8
@@ -75,8 +75,8 @@
         "round": 1,
         "teamAId": 1,
         "teamBId": 4,
-        "teamAName": "1 / 2",
-        "teamBName": "7 / 8",
+        "teamAName": "John / Jack",
+        "teamBName": "Marshall / Noah",
         "teamAPlayerIds": [
           1,
           2
@@ -94,8 +94,8 @@
         "round": 1,
         "teamAId": 2,
         "teamBId": 3,
-        "teamAName": "3 / 4",
-        "teamBName": "5 / 6",
+        "teamAName": "Jay / Bob",
+        "teamBName": "Billy / Mark",
         "teamAPlayerIds": [
           3,
           4
@@ -113,8 +113,8 @@
         "round": 2,
         "teamAId": 1,
         "teamBId": 3,
-        "teamAName": "1 / 2",
-        "teamBName": "5 / 6",
+        "teamAName": "John / Jack",
+        "teamBName": "Billy / Mark",
         "teamAPlayerIds": [
           1,
           2
@@ -132,8 +132,8 @@
         "round": 2,
         "teamAId": 4,
         "teamBId": 2,
-        "teamAName": "7 / 8",
-        "teamBName": "3 / 4",
+        "teamAName": "Marshall / Noah",
+        "teamBName": "Jay / Bob",
         "teamAPlayerIds": [
           7,
           8
@@ -151,8 +151,8 @@
         "round": 3,
         "teamAId": 1,
         "teamBId": 2,
-        "teamAName": "1 / 2",
-        "teamBName": "3 / 4",
+        "teamAName": "John / Jack",
+        "teamBName": "Jay / Bob",
         "teamAPlayerIds": [
           1,
           2
@@ -170,8 +170,8 @@
         "round": 3,
         "teamAId": 3,
         "teamBId": 4,
-        "teamAName": "5 / 6",
-        "teamBName": "7 / 8",
+        "teamAName": "Billy / Mark",
+        "teamBName": "Marshall / Noah",
         "teamAPlayerIds": [
           5,
           6
@@ -185,6 +185,6 @@
         "completed": false
       }
     ],
-    "createdAt": "2026-09-06T02:58:29.051Z"
+    "createdAt": "2026-09-06T03:09:50.407Z"
   }
 }
