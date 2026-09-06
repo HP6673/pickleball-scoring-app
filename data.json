@@ -385,8 +385,8 @@
           16
         ],
         "scoreA": 10,
-        "scoreB": 11,
-        "completed": false
+        "scoreB": 12,
+        "completed": true
       },
       {
         "id": 11,
