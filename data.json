@@ -1164,8 +1164,8 @@
           4
         ],
         "scoreA": 0,
-        "scoreB": 0,
-        "completed": false
+        "scoreB": 11,
+        "completed": true
       },
       {
         "id": 52,
