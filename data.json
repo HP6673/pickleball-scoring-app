@@ -1277,9 +1277,9 @@
           23,
           24
         ],
-        "scoreA": 3,
-        "scoreB": 11,
-        "completed": true
+        "scoreA": 0,
+        "scoreB": 0,
+        "completed": false
       },
       {
         "id": 58,
@@ -1296,9 +1296,9 @@
           21,
           22
         ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false
+        "scoreA": 3,
+        "scoreB": 11,
+        "completed": true
       },
       {
         "id": 59,
