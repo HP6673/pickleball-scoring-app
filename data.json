@@ -1106,9 +1106,9 @@
           21,
           22
         ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false
+        "scoreA": 4,
+        "scoreB": 11,
+        "completed": true
       },
       {
         "id": 49,
