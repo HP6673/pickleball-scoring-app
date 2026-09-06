@@ -116,6 +116,9 @@
           <button class="score-btn plus" data-action="inc">+</button>
         </div>
       </div>
+      <div class="card-actions">
+        <button type="button" class="edit-score-btn" data-action="edit-score">✏️ Edit Score</button>
+      </div>
       ${game.completed ? `<span class="final-badge">Final ${Math.max(game.scoreA, game.scoreB)}-${Math.min(game.scoreA, game.scoreB)}</span>` : ''}
     `;
 
@@ -127,6 +130,10 @@
           updateScore(game.id, side, delta);
         });
       });
+    });
+
+    card.querySelector('[data-action="edit-score"]').addEventListener('click', () => {
+      openScoreModal(game);
     });
 
     return card;
@@ -148,6 +155,52 @@
       console.error('Failed to update score', e);
     }
   }
+
+  // ---------- score edit modal ----------
+  const scoreModal = el('score-modal');
+  let editingGameId = null;
+
+  function openScoreModal(game) {
+    editingGameId = game.id;
+    el('score-edit-a-label').textContent = game.teamAName;
+    el('score-edit-b-label').textContent = game.teamBName;
+    el('score-edit-a').value = game.scoreA;
+    el('score-edit-b').value = game.scoreB;
+    el('score-edit-error').hidden = true;
+    scoreModal.hidden = false;
+    el('score-edit-a').focus();
+  }
+
+  el('score-cancel').addEventListener('click', () => (scoreModal.hidden = true));
+
+  el('score-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const errEl = el('score-edit-error');
+    errEl.hidden = true;
+
+    const scoreA = parseInt(el('score-edit-a').value, 10);
+    const scoreB = parseInt(el('score-edit-b').value, 10);
+
+    try {
+      const res = await fetch(`/api/games/${editingGameId}/score/set`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ scoreA, scoreB })
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        errEl.textContent = data.error || 'Could not save score';
+        errEl.hidden = false;
+        return;
+      }
+      scoreModal.hidden = true;
+      currentTournament = data.tournament;
+      render(data.tournament, data.standings);
+    } catch (e) {
+      errEl.textContent = 'Something went wrong. Try again.';
+      errEl.hidden = false;
+    }
+  });
 
   function escapeHtml(str) {
     const d = document.createElement('div');

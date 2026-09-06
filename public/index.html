@@ -85,7 +85,7 @@
         <label>Format
           <select id="format-select">
             <option value="fixed">Fixed Teams</option>
-            <option value="rotating">Round Robin (rotating partners)</option>
+            <option value="rotating">Rotating Partners</option>
           </select>
         </label>
         <label id="rounds-field">Number of Rounds
@@ -105,9 +105,32 @@
   </div>
 </div>
 
+<div id="score-modal" class="modal-overlay" hidden>
+  <div class="modal">
+    <h3>✏️ Edit Score</h3>
+    <form id="score-form">
+      <div class="score-edit-row">
+        <label>
+          <span id="score-edit-a-label">Team A</span>
+          <input type="number" id="score-edit-a" min="0" max="99" inputmode="numeric" required>
+        </label>
+        <label>
+          <span id="score-edit-b-label">Team B</span>
+          <input type="number" id="score-edit-b" min="0" max="99" inputmode="numeric" required>
+        </label>
+      </div>
+      <p id="score-edit-error" class="error-text" hidden></p>
+      <div class="modal-actions">
+        <button type="button" id="score-cancel" class="btn btn-ghost">Cancel</button>
+        <button type="submit" class="btn btn-primary">Save</button>
+      </div>
+    </form>
+  </div>
+</div>
+
 <footer class="site-footer">
   <p>Website Sponsored and Created by <strong>LJ Web Management LLC</strong></p>
-  <button id="admin-link" class="admin-link">admin</button>
+  <button id="admin-link" class="admin-link">Admin Panel</button>
 </footer>
 
 <script src="app.js"></script>

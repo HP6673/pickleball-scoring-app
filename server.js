@@ -339,6 +339,37 @@ app.post('/api/games/:id/score', async (req, res) => {
   }
 });
 
+function isValidScoreValue(n) {
+  return Number.isInteger(n) && n >= 0 && n <= 99;
+}
+
+app.post('/api/games/:id/score/set', async (req, res) => {
+  const data = store.readData();
+  if (!data.tournament) return res.status(404).json({ error: 'No active tournament.' });
+
+  const id = parseInt(req.params.id, 10);
+  const scoreA = Number(req.body && req.body.scoreA);
+  const scoreB = Number(req.body && req.body.scoreB);
+  if (!isValidScoreValue(scoreA) || !isValidScoreValue(scoreB)) {
+    return res.status(400).json({ error: 'Scores must be whole numbers between 0 and 99.' });
+  }
+
+  const game = data.tournament.games.find(g => g.id === id);
+  if (!game) return res.status(404).json({ error: 'Game not found.' });
+
+  game.scoreA = scoreA;
+  game.scoreB = scoreB;
+  game.completed = isComplete(game.scoreA, game.scoreB);
+
+  try {
+    await store.writeData(data);
+    res.json({ tournament: data.tournament, standings: computeStandings(data.tournament) });
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ error: 'Could not save score. Try again.' });
+  }
+});
+
 store.init()
   .then(() => {
     app.listen(PORT, () => {
