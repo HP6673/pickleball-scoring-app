@@ -233,8 +233,8 @@
           22
         ],
         "scoreA": 2,
-        "scoreB": 9,
-        "completed": false
+        "scoreB": 11,
+        "completed": true
       },
       {
         "id": 3,
