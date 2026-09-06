@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: pickleball-scoring-app
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: GITHUB_TOKEN
+        sync: false
+      - key: GITHUB_REPO
+        value: HP6673/pickleball-scoring-app
+      - key: GITHUB_BRANCH
+        value: main

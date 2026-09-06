@@ -29,9 +29,18 @@ npm start
 
 Then open **http://localhost:3000**. With no extra setup, tournament data is saved to a local `data.json` file.
 
-## ☁️ Deploying
+## ☁️ Deploying (Render — free tier)
 
-This app needs somewhere to actually *run* the Node server (GitHub Pages can't — it's static hosting only). Any Node host works: [Render](https://render.com), [Railway](https://railway.app), [Fly.io](https://fly.io), a VPS, etc. Build command: `npm install`. Start command: `npm start`.
+This app needs somewhere to actually *run* the Node server (GitHub Pages can't — it's static hosting only). **[Render](https://render.com)** has the most generous truly-free tier of the options considered (no credit card, no time-limited trial) — this repo includes a [render.yaml](render.yaml) Blueprint so setup is just:
+
+1. Go to the [Render Blueprints dashboard](https://dashboard.render.com/blueprints) and click **New Blueprint Instance**.
+2. Connect your GitHub account and select the `HP6673/pickleball-scoring-app` repo. Render reads `render.yaml` automatically.
+3. When prompted for the `GITHUB_TOKEN` env var, paste in a GitHub [fine-grained personal access token](https://github.com/settings/personal-access-tokens/new) scoped to **just this repo** with **Contents: Read and write** permission (create it in GitHub first, then paste it into Render's dashboard — never share it anywhere else).
+4. Click **Apply** / **Deploy**. Render builds with `npm install` and runs `npm start`.
+
+Render's free web services spin down after ~15 minutes of inactivity and take a few seconds to wake back up on the next visit — harmless here since tournament data lives in this GitHub repo, not on Render's disk.
+
+Any other Node host ([Railway](https://railway.app), [Fly.io](https://fly.io), a VPS, etc.) works too with the same build/start commands, if you'd rather use one of those instead.
 
 ### Persisting data to GitHub instead of local disk
 
