@@ -39,7 +39,11 @@ async function githubFetch() {
   return { data: content.trim() ? JSON.parse(content) : { tournament: null }, sha: json.sha };
 }
 
-async function githubPush(data) {
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function githubPushOnce(data) {
   const body = {
     message: `Update tournament data (${new Date().toISOString()})`,
     content: Buffer.from(JSON.stringify(data, null, 2)).toString('base64'),
@@ -52,11 +56,42 @@ async function githubPush(data) {
     headers: { ...githubHeaders(), 'Content-Type': 'application/json' },
     body: JSON.stringify(body)
   });
-  if (!res.ok) {
-    throw new Error(`GitHub write failed: ${res.status} ${await res.text()}`);
+
+  if (res.ok) {
+    const json = await res.json();
+    sha = json.content.sha;
+    return;
   }
-  const json = await res.json();
-  sha = json.content.sha;
+
+  const errText = await res.text();
+  const err = new Error(`GitHub write failed: ${res.status} ${errText}`);
+  err.status = res.status;
+  throw err;
+}
+
+// GitHub's Contents API can transiently reject rapid back-to-back writes to the
+// same file (secondary rate limiting) or reject a stale sha if two writes race.
+// Retry those cases instead of surfacing an error on every quick double-tap.
+async function githubPush(data) {
+  const maxAttempts = 4;
+  let lastErr;
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
+    try {
+      if (attempt > 1) {
+        // sha may be stale after a conflict; re-sync with the latest commit first.
+        const remote = await githubFetch();
+        sha = remote.sha;
+      }
+      await githubPushOnce(data);
+      return;
+    } catch (e) {
+      lastErr = e;
+      const retryable = e.status === 403 || e.status === 409 || e.status === 429 || e.status >= 500;
+      if (!retryable || attempt === maxAttempts) break;
+      await sleep(500 * attempt);
+    }
+  }
+  throw lastErr;
 }
 
 function localRead() {
@@ -90,8 +125,11 @@ function readData() {
 async function writeData(data) {
   cache = data;
   if (useGitHub) {
-    chain = chain.then(() => githubPush(data));
-    await chain;
+    // Chain writes so they hit the GitHub API in order, but never let one
+    // failed push poison the queue for every write that comes after it.
+    const result = chain.then(() => githubPush(data));
+    chain = result.catch(() => {});
+    await result;
   } else {
     localWrite(data);
   }
