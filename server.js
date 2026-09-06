@@ -1,10 +1,9 @@
 const express = require('express');
-const fs = require('fs');
 const path = require('path');
+const store = require('./store');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
-const DATA_FILE = path.join(__dirname, 'data.json');
 
 const ADMIN_USER = 'admin';
 const ADMIN_PASS = 'admin';
@@ -18,20 +17,6 @@ const WIN_BY = 2;
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
-
-// ---------- file-backed storage ----------
-function readData() {
-  try {
-    const raw = fs.readFileSync(DATA_FILE, 'utf8');
-    return JSON.parse(raw);
-  } catch (e) {
-    return { tournament: null };
-  }
-}
-
-function writeData(data) {
-  fs.writeFileSync(DATA_FILE, JSON.stringify(data, null, 2));
-}
 
 function requireAdmin(req, res, next) {
   if (req.headers['x-admin-token'] !== ADMIN_TOKEN) {
@@ -229,12 +214,12 @@ app.post('/api/login', (req, res) => {
 });
 
 app.get('/api/tournament', (req, res) => {
-  const data = readData();
+  const data = store.readData();
   if (!data.tournament) return res.json({ tournament: null, standings: [] });
   res.json({ tournament: data.tournament, standings: computeStandings(data.tournament) });
 });
 
-app.post('/api/tournament', requireAdmin, (req, res) => {
+app.post('/api/tournament', requireAdmin, async (req, res) => {
   const { players: rawPlayers, format, numRounds } = req.body || {};
 
   if (!Array.isArray(rawPlayers) || rawPlayers.length < 4) {
@@ -308,17 +293,27 @@ app.post('/api/tournament', requireAdmin, (req, res) => {
     createdAt: new Date().toISOString()
   };
 
-  writeData({ tournament });
-  res.json({ tournament, standings: computeStandings(tournament) });
+  try {
+    await store.writeData({ tournament });
+    res.json({ tournament, standings: computeStandings(tournament) });
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ error: 'Could not save tournament. Try again.' });
+  }
 });
 
-app.post('/api/tournament/reset', requireAdmin, (req, res) => {
-  writeData({ tournament: null });
-  res.json({ ok: true });
+app.post('/api/tournament/reset', requireAdmin, async (req, res) => {
+  try {
+    await store.writeData({ tournament: null });
+    res.json({ ok: true });
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ error: 'Could not reset tournament. Try again.' });
+  }
 });
 
-app.post('/api/games/:id/score', (req, res) => {
-  const data = readData();
+app.post('/api/games/:id/score', async (req, res) => {
+  const data = store.readData();
   if (!data.tournament) return res.status(404).json({ error: 'No active tournament.' });
 
   const id = parseInt(req.params.id, 10);
@@ -335,10 +330,22 @@ app.post('/api/games/:id/score', (req, res) => {
 
   game.completed = isComplete(game.scoreA, game.scoreB);
 
-  writeData(data);
-  res.json({ tournament: data.tournament, standings: computeStandings(data.tournament) });
+  try {
+    await store.writeData(data);
+    res.json({ tournament: data.tournament, standings: computeStandings(data.tournament) });
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ error: 'Could not save score. Try again.' });
+  }
 });
 
-app.listen(PORT, () => {
-  console.log(`Pickleball scoring app running on http://localhost:${PORT}`);
-});
+store.init()
+  .then(() => {
+    app.listen(PORT, () => {
+      console.log(`Pickleball scoring app running on http://localhost:${PORT}`);
+    });
+  })
+  .catch((e) => {
+    console.error('Failed to initialize data store', e);
+    process.exit(1);
+  });
