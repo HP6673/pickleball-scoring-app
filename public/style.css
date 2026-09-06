@@ -321,8 +321,6 @@ tbody tr:first-child {
   color: var(--muted);
   font-size: 0.78rem;
 }
-.site-footer p { margin: 0 0 4px; }
-.site-footer p strong { color: var(--court-blue); }
 
 .admin-link {
   display: inline-block;
