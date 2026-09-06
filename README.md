@@ -18,7 +18,7 @@ A live, mobile-friendly scoreboard for pickleball tournaments — set up players
 | 📊 **Live standings** | Team wins/losses & point differential, or individual standings when partners rotate |
 | 🔓 **Open scoring** | Anyone can update a score — no login needed courtside |
 | 🔒 **Hidden admin setup** | A quiet "admin" link gates tournament creation/reset behind a login |
-| 💾 **Zero-database backend** | Everything persists to a single `data.json` file |
+| 💾 **Zero-database backend** | Everything persists to a single `data.json` file — locally, or committed straight to this repo |
 
 ## 🚀 Getting Started
 
@@ -27,7 +27,24 @@ npm install
 npm start
 ```
 
-Then open **http://localhost:3000**.
+Then open **http://localhost:3000**. With no extra setup, tournament data is saved to a local `data.json` file.
+
+## ☁️ Deploying
+
+This app needs somewhere to actually *run* the Node server (GitHub Pages can't — it's static hosting only). Any Node host works: [Render](https://render.com), [Railway](https://railway.app), [Fly.io](https://fly.io), a VPS, etc. Build command: `npm install`. Start command: `npm start`.
+
+### Persisting data to GitHub instead of local disk
+
+By default the server writes to a local `data.json` file, which many free hosts wipe on restart. Set these environment variables on your host and it will read/write `data.json` **directly in this GitHub repo** via the GitHub API instead — no local disk needed:
+
+| Variable | Required | Default | Notes |
+|---|---|---|---|
+| `GITHUB_TOKEN` | ✅ | — | A GitHub token with **Contents: Read and write** access to this repo. Create a [fine-grained personal access token](https://github.com/settings/personal-access-tokens/new) scoped to just this repository. Set it as a secret env var on your host — never commit it. |
+| `GITHUB_REPO` | – | `HP6673/pickleball-scoring-app` | `owner/repo` to commit to |
+| `GITHUB_BRANCH` | – | `main` | Branch to commit to |
+| `GITHUB_FILE_PATH` | – | `data.json` | Path of the data file in the repo |
+
+Every tournament setup change and every score tap becomes a commit to this repo, so expect a busy commit history during a live tournament — that's expected. If `GITHUB_TOKEN` isn't set, the app just uses the local file as normal.
 
 ## 🏆 How It Works
 
@@ -41,7 +58,7 @@ Then open **http://localhost:3000**.
 
 ## 🛠️ Tech Stack
 
-- **Backend:** Node.js + Express, persisting state to a local `data.json` file
+- **Backend:** Node.js + Express, persisting state to `data.json` — locally, or via the GitHub Contents API (see [Deploying](#️-deploying))
 - **Frontend:** Vanilla HTML/CSS/JS — no build step, no framework
 
 ---
