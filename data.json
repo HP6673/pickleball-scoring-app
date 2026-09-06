@@ -878,9 +878,9 @@
           3,
           4
         ],
-        "scoreA": 11,
-        "scoreB": 5,
-        "completed": true
+        "scoreA": 0,
+        "scoreB": 0,
+        "completed": false
       },
       {
         "id": 37,
@@ -897,9 +897,9 @@
           11,
           12
         ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false
+        "scoreA": 5,
+        "scoreB": 11,
+        "completed": true
       },
       {
         "id": 38,
