@@ -36,18 +36,21 @@
     el('standings-title').textContent =
       tournament.format === 'fixed' ? 'Team Standings' : 'Player Standings';
 
+    const medals = ['🥇', '🥈', '🥉'];
     const tbody = document.querySelector('#standings-table tbody');
     tbody.innerHTML = '';
     standings.forEach((row, i) => {
       const tr = document.createElement('tr');
+      const diffClass = row.diff > 0 ? 'diff-positive' : row.diff < 0 ? 'diff-negative' : 'diff-zero';
+      const rankCell = medals[i] ? `<span class="rank-medal">${medals[i]}</span>` : i + 1;
       tr.innerHTML = `
-        <td>${i + 1}</td>
+        <td>${rankCell}</td>
         <td>${escapeHtml(row.name)}</td>
-        <td>${row.wins}</td>
-        <td>${row.losses}</td>
+        <td><span class="pill pill-win">${row.wins}</span></td>
+        <td><span class="pill pill-loss">${row.losses}</span></td>
         <td>${row.pointsFor}</td>
         <td>${row.pointsAgainst}</td>
-        <td>${row.diff > 0 ? '+' : ''}${row.diff}</td>
+        <td class="${diffClass}">${row.diff > 0 ? '+' : ''}${row.diff}</td>
       `;
       tbody.appendChild(tr);
     });
@@ -69,7 +72,7 @@
       .forEach((roundNum) => {
         const heading = document.createElement('h3');
         heading.className = 'round-heading';
-        heading.textContent = `Round ${roundNum}`;
+        heading.innerHTML = `<span class="round-badge">Round ${roundNum}</span>`;
         container.appendChild(heading);
 
         const games = byRound[roundNum];
@@ -92,9 +95,12 @@
     const card = document.createElement('div');
     card.className = 'game-card' + (game.completed ? ' completed' : '');
 
+    const aWins = game.completed && game.scoreA > game.scoreB;
+    const bWins = game.completed && game.scoreB > game.scoreA;
+
     card.innerHTML = `
-      <div class="team-row">
-        <span class="team-name">${escapeHtml(game.teamAName)}</span>
+      <div class="team-row${aWins ? ' winner' : ''}">
+        <span class="team-name"><span class="team-dot a"></span>${escapeHtml(game.teamAName)}${aWins ? ' <span class="winner-trophy">🏆</span>' : ''}</span>
         <div class="score-control" data-side="a">
           <button class="score-btn minus" data-action="dec">&minus;</button>
           <span class="score-value">${game.scoreA}</span>
@@ -102,8 +108,8 @@
         </div>
       </div>
       <div class="vs-divider">VS</div>
-      <div class="team-row">
-        <span class="team-name">${escapeHtml(game.teamBName)}</span>
+      <div class="team-row${bWins ? ' winner' : ''}">
+        <span class="team-name"><span class="team-dot b"></span>${escapeHtml(game.teamBName)}${bWins ? ' <span class="winner-trophy">🏆</span>' : ''}</span>
         <div class="score-control" data-side="b">
           <button class="score-btn minus" data-action="dec">&minus;</button>
           <span class="score-value">${game.scoreB}</span>
