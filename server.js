@@ -312,33 +312,6 @@ app.post('/api/tournament/reset', requireAdmin, async (req, res) => {
   }
 });
 
-app.post('/api/games/:id/score', async (req, res) => {
-  const data = store.readData();
-  if (!data.tournament) return res.status(404).json({ error: 'No active tournament.' });
-
-  const id = parseInt(req.params.id, 10);
-  const { side, delta } = req.body || {};
-  if (!['a', 'b'].includes(side) || ![1, -1].includes(delta)) {
-    return res.status(400).json({ error: 'Invalid score update.' });
-  }
-
-  const game = data.tournament.games.find(g => g.id === id);
-  if (!game) return res.status(404).json({ error: 'Game not found.' });
-
-  if (side === 'a') game.scoreA = Math.max(0, game.scoreA + delta);
-  else game.scoreB = Math.max(0, game.scoreB + delta);
-
-  game.completed = isComplete(game.scoreA, game.scoreB);
-
-  try {
-    await store.writeData(data);
-    res.json({ tournament: data.tournament, standings: computeStandings(data.tournament) });
-  } catch (e) {
-    console.error(e);
-    res.status(500).json({ error: 'Could not save score. Try again.' });
-  }
-});
-
 function isValidScoreValue(n) {
   return Number.isInteger(n) && n >= 0 && n <= 99;
 }

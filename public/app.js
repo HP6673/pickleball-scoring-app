@@ -101,20 +101,12 @@
     card.innerHTML = `
       <div class="team-row${aWins ? ' winner' : ''}">
         <span class="team-name"><span class="team-dot a"></span>${escapeHtml(game.teamAName)}${aWins ? ' <span class="winner-trophy">🏆</span>' : ''}</span>
-        <div class="score-control" data-side="a">
-          <button class="score-btn minus" data-action="dec">&minus;</button>
-          <span class="score-value">${game.scoreA}</span>
-          <button class="score-btn plus" data-action="inc">+</button>
-        </div>
+        <span class="score-value">${game.scoreA}</span>
       </div>
       <div class="vs-divider">VS</div>
       <div class="team-row${bWins ? ' winner' : ''}">
         <span class="team-name"><span class="team-dot b"></span>${escapeHtml(game.teamBName)}${bWins ? ' <span class="winner-trophy">🏆</span>' : ''}</span>
-        <div class="score-control" data-side="b">
-          <button class="score-btn minus" data-action="dec">&minus;</button>
-          <span class="score-value">${game.scoreB}</span>
-          <button class="score-btn plus" data-action="inc">+</button>
-        </div>
+        <span class="score-value">${game.scoreB}</span>
       </div>
       <div class="card-actions">
         <button type="button" class="edit-score-btn" data-action="edit-score">✏️ Edit Score</button>
@@ -122,38 +114,11 @@
       ${game.completed ? `<span class="final-badge">Final ${Math.max(game.scoreA, game.scoreB)}-${Math.min(game.scoreA, game.scoreB)}</span>` : ''}
     `;
 
-    card.querySelectorAll('.score-control').forEach((control) => {
-      const side = control.dataset.side;
-      control.querySelectorAll('.score-btn').forEach((btn) => {
-        btn.addEventListener('click', () => {
-          const delta = btn.dataset.action === 'inc' ? 1 : -1;
-          updateScore(game.id, side, delta);
-        });
-      });
-    });
-
     card.querySelector('[data-action="edit-score"]').addEventListener('click', () => {
       openScoreModal(game);
     });
 
     return card;
-  }
-
-  async function updateScore(gameId, side, delta) {
-    try {
-      const res = await fetch(`/api/games/${gameId}/score`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ side, delta })
-      });
-      const data = await res.json();
-      if (res.ok) {
-        currentTournament = data.tournament;
-        render(data.tournament, data.standings);
-      }
-    } catch (e) {
-      console.error('Failed to update score', e);
-    }
   }
 
   // ---------- score edit modal ----------

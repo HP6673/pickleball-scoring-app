@@ -111,8 +111,8 @@ main {
   flex: 1;
   width: 100%;
   max-width: 780px;
-  margin: -20px auto 0;
-  padding: 0 16px 40px;
+  margin: 0 auto;
+  padding: 20px 16px 40px;
 }
 
 .card {
@@ -285,33 +285,11 @@ tbody tr:first-child {
 
 .winner-trophy { font-size: 0.85rem; }
 
-.score-control {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.score-btn {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  border: none;
-  font-size: 1.15rem;
-  font-weight: 800;
-  cursor: pointer;
-  line-height: 1;
-  transition: transform 0.1s ease, filter 0.1s ease;
-}
-.score-btn:hover { filter: brightness(0.96); }
-.score-btn:active { transform: scale(0.9); }
-.score-btn.minus { color: var(--loss); background: var(--loss-bg); }
-.score-btn.plus { color: var(--win); background: var(--win-bg); }
-
 .score-value {
   min-width: 30px;
   text-align: center;
   font-family: var(--font-heading);
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-weight: 800;
   color: var(--ink);
 }
