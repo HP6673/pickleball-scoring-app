@@ -1,0 +1,63 @@
+{
+  "tournament": {
+    "format": "fixed",
+    "players": [
+      {
+        "id": 1,
+        "name": "Test1"
+      },
+      {
+        "id": 2,
+        "name": "Test2"
+      },
+      {
+        "id": 3,
+        "name": "Test3"
+      },
+      {
+        "id": 4,
+        "name": "Test4"
+      }
+    ],
+    "teams": [
+      {
+        "id": 1,
+        "name": "Test1 / Test2",
+        "playerIds": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": 2,
+        "name": "Test3 / Test4",
+        "playerIds": [
+          3,
+          4
+        ]
+      }
+    ],
+    "games": [
+      {
+        "id": 1,
+        "round": 1,
+        "teamAId": 1,
+        "teamBId": 2,
+        "teamAName": "Test1 / Test2",
+        "teamBName": "Test3 / Test4",
+        "teamAPlayerIds": [
+          1,
+          2
+        ],
+        "teamBPlayerIds": [
+          3,
+          4
+        ],
+        "scoreA": 0,
+        "scoreB": 0,
+        "completed": false
+      }
+    ],
+    "createdAt": "2026-09-06T02:29:04.894Z"
+  }
+}
