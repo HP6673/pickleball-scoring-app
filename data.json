@@ -1,3 +1,92 @@
 {
-  "tournament": null
+  "tournament": {
+    "format": "rotating",
+    "players": [
+      {
+        "id": 1,
+        "name": "Alice"
+      },
+      {
+        "id": 2,
+        "name": "Ben"
+      },
+      {
+        "id": 3,
+        "name": "Carla"
+      },
+      {
+        "id": 4,
+        "name": "Dan"
+      },
+      {
+        "id": 5,
+        "name": "Ella"
+      },
+      {
+        "id": 6,
+        "name": "Frank"
+      }
+    ],
+    "teams": [],
+    "games": [
+      {
+        "id": 1,
+        "round": 1,
+        "teamAName": "Ella / Carla",
+        "teamBName": "Frank / Ben",
+        "teamAPlayerIds": [
+          5,
+          3
+        ],
+        "teamBPlayerIds": [
+          6,
+          2
+        ],
+        "scoreA": 0,
+        "scoreB": 0,
+        "completed": false,
+        "sitOut": null,
+        "byeTeam": "Dan / Alice"
+      },
+      {
+        "id": 2,
+        "round": 2,
+        "teamAName": "Frank / Carla",
+        "teamBName": "Dan / Alice",
+        "teamAPlayerIds": [
+          6,
+          3
+        ],
+        "teamBPlayerIds": [
+          4,
+          1
+        ],
+        "scoreA": 0,
+        "scoreB": 0,
+        "completed": false,
+        "sitOut": null,
+        "byeTeam": "Ella / Ben"
+      },
+      {
+        "id": 3,
+        "round": 3,
+        "teamAName": "Frank / Ella",
+        "teamBName": "Carla / Dan",
+        "teamAPlayerIds": [
+          6,
+          5
+        ],
+        "teamBPlayerIds": [
+          3,
+          4
+        ],
+        "scoreA": 0,
+        "scoreB": 0,
+        "completed": false,
+        "sitOut": null,
+        "byeTeam": "Ben / Alice"
+      }
+    ],
+    "createdAt": "2026-09-06T02:39:17.778Z"
+  }
 }
