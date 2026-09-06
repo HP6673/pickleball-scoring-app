@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pickleball Tournament Scoreboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="brand">
+    <span class="ball" aria-hidden="true"></span>
+    <h1>Pickleball Tournament</h1>
+  </div>
+  <p class="tagline">Live scores &amp; standings</p>
+</header>
+
+<main id="app">
+  <section id="empty-state" class="card" hidden>
+    <h2>No tournament yet</h2>
+    <p>Check back once the tournament has been set up.</p>
+  </section>
+
+  <section id="scoreboard" hidden>
+    <div class="card standings-card">
+      <h2 id="standings-title">Standings</h2>
+      <div class="table-wrap">
+        <table id="standings-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Name</th>
+              <th>W</th>
+              <th>L</th>
+              <th>PF</th>
+              <th>PA</th>
+              <th>Diff</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="rounds-container"></div>
+  </section>
+</main>
+
+<div id="login-modal" class="modal-overlay" hidden>
+  <div class="modal">
+    <h3>Admin Login</h3>
+    <form id="login-form">
+      <label>Username
+        <input type="text" id="login-username" autocomplete="username" required>
+      </label>
+      <label>Password
+        <input type="password" id="login-password" autocomplete="current-password" required>
+      </label>
+      <p id="login-error" class="error-text" hidden></p>
+      <div class="modal-actions">
+        <button type="button" id="login-cancel" class="btn btn-ghost">Cancel</button>
+        <button type="submit" class="btn btn-primary">Log In</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<div id="admin-modal" class="modal-overlay" hidden>
+  <div class="modal modal-wide">
+    <div class="modal-header">
+      <h3>Tournament Setup</h3>
+      <button id="admin-close" class="btn-icon" aria-label="Close">&times;</button>
+    </div>
+
+    <form id="setup-form">
+      <div class="form-row">
+        <label>Number of Players
+          <input type="number" id="num-players" min="4" max="40" value="8" required>
+        </label>
+        <label>Format
+          <select id="format-select">
+            <option value="fixed">Fixed Teams</option>
+            <option value="rotating">Round Robin (rotating partners)</option>
+          </select>
+        </label>
+        <label id="rounds-field">Number of Rounds
+          <input type="number" id="num-rounds" min="1" max="20" value="6">
+        </label>
+      </div>
+
+      <div id="player-names" class="player-grid"></div>
+
+      <p id="setup-error" class="error-text" hidden></p>
+
+      <div class="modal-actions">
+        <button type="button" id="reset-tournament" class="btn btn-danger">Reset Tournament</button>
+        <button type="submit" class="btn btn-primary">Create Tournament</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <p>Website Sponsored and Created by LJ Web Management LLC</p>
+  <button id="admin-link" class="admin-link">admin</button>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
