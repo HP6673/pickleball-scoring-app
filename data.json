@@ -574,9 +574,9 @@
           15,
           16
         ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false
+        "scoreA": 9,
+        "scoreB": 11,
+        "completed": true
       },
       {
         "id": 21,
