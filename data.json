@@ -1,80 +1,142 @@
 {
   "tournament": {
-    "format": "rotating",
+    "format": "fixed",
     "players": [
       {
         "id": 1,
-        "name": "Alice"
+        "name": "1"
       },
       {
         "id": 2,
-        "name": "Ben"
+        "name": "2"
       },
       {
         "id": 3,
-        "name": "Carla"
+        "name": "3"
       },
       {
         "id": 4,
-        "name": "Dan"
+        "name": "4"
       },
       {
         "id": 5,
-        "name": "Ella"
+        "name": "5"
       },
       {
         "id": 6,
-        "name": "Frank"
+        "name": "6"
+      },
+      {
+        "id": 7,
+        "name": "7"
+      },
+      {
+        "id": 8,
+        "name": "8"
       }
     ],
-    "teams": [],
+    "teams": [
+      {
+        "id": 1,
+        "name": "1 / 2",
+        "playerIds": [
+          1,
+          2
+        ]
+      },
+      {
+        "id": 2,
+        "name": "3 / 4",
+        "playerIds": [
+          3,
+          4
+        ]
+      },
+      {
+        "id": 3,
+        "name": "5 / 6",
+        "playerIds": [
+          5,
+          6
+        ]
+      },
+      {
+        "id": 4,
+        "name": "7 / 8",
+        "playerIds": [
+          7,
+          8
+        ]
+      }
+    ],
     "games": [
       {
         "id": 1,
         "round": 1,
-        "teamAName": "Ella / Carla",
-        "teamBName": "Frank / Ben",
+        "teamAId": 1,
+        "teamBId": 4,
+        "teamAName": "1 / 2",
+        "teamBName": "7 / 8",
         "teamAPlayerIds": [
-          5,
-          3
-        ],
-        "teamBPlayerIds": [
-          6,
+          1,
           2
         ],
-        "scoreA": 0,
-        "scoreB": 1,
-        "completed": false,
-        "sitOut": null,
-        "byeTeam": "Dan / Alice"
-      },
-      {
-        "id": 2,
-        "round": 2,
-        "teamAName": "Frank / Carla",
-        "teamBName": "Dan / Alice",
-        "teamAPlayerIds": [
-          6,
-          3
-        ],
         "teamBPlayerIds": [
-          4,
-          1
+          7,
+          8
         ],
         "scoreA": 0,
         "scoreB": 0,
-        "completed": false,
-        "sitOut": null,
-        "byeTeam": "Ella / Ben"
+        "completed": false
+      },
+      {
+        "id": 2,
+        "round": 1,
+        "teamAId": 2,
+        "teamBId": 3,
+        "teamAName": "3 / 4",
+        "teamBName": "5 / 6",
+        "teamAPlayerIds": [
+          3,
+          4
+        ],
+        "teamBPlayerIds": [
+          5,
+          6
+        ],
+        "scoreA": 0,
+        "scoreB": 0,
+        "completed": false
       },
       {
         "id": 3,
-        "round": 3,
-        "teamAName": "Frank / Ella",
-        "teamBName": "Carla / Dan",
+        "round": 2,
+        "teamAId": 1,
+        "teamBId": 3,
+        "teamAName": "1 / 2",
+        "teamBName": "5 / 6",
         "teamAPlayerIds": [
-          6,
-          5
+          1,
+          2
+        ],
+        "teamBPlayerIds": [
+          5,
+          6
+        ],
+        "scoreA": 0,
+        "scoreB": 0,
+        "completed": false
+      },
+      {
+        "id": 4,
+        "round": 2,
+        "teamAId": 4,
+        "teamBId": 2,
+        "teamAName": "7 / 8",
+        "teamBName": "3 / 4",
+        "teamAPlayerIds": [
+          7,
+          8
         ],
         "teamBPlayerIds": [
           3,
@@ -82,11 +144,47 @@
         ],
         "scoreA": 0,
         "scoreB": 0,
-        "completed": false,
-        "sitOut": null,
-        "byeTeam": "Ben / Alice"
+        "completed": false
+      },
+      {
+        "id": 5,
+        "round": 3,
+        "teamAId": 1,
+        "teamBId": 2,
+        "teamAName": "1 / 2",
+        "teamBName": "3 / 4",
+        "teamAPlayerIds": [
+          1,
+          2
+        ],
+        "teamBPlayerIds": [
+          3,
+          4
+        ],
+        "scoreA": 0,
+        "scoreB": 0,
+        "completed": false
+      },
+      {
+        "id": 6,
+        "round": 3,
+        "teamAId": 3,
+        "teamBId": 4,
+        "teamAName": "5 / 6",
+        "teamBName": "7 / 8",
+        "teamAPlayerIds": [
+          5,
+          6
+        ],
+        "teamBPlayerIds": [
+          7,
+          8
+        ],
+        "scoreA": 0,
+        "scoreB": 0,
+        "completed": false
       }
     ],
-    "createdAt": "2026-09-06T02:39:17.778Z"
+    "createdAt": "2026-09-06T02:58:29.051Z"
   }
 }
