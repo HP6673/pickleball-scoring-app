@@ -1220,9 +1220,9 @@
           19,
           20
         ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false
+        "scoreA": 11,
+        "scoreB": 8,
+        "completed": true
       },
       {
         "id": 55,
@@ -1277,9 +1277,9 @@
           23,
           24
         ],
-        "scoreA": 2,
-        "scoreB": 11,
-        "completed": true
+        "scoreA": 0,
+        "scoreB": 0,
+        "completed": false
       },
       {
         "id": 58,
@@ -1448,9 +1448,9 @@
           15,
           16
         ],
-        "scoreA": 8,
-        "scoreB": 11,
-        "completed": true
+        "scoreA": 0,
+        "scoreB": 0,
+        "completed": false
       }
     ],
     "createdAt": "2026-09-06T06:08:57.470Z"
