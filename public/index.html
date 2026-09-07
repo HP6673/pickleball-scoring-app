@@ -13,7 +13,7 @@
 
 <header class="site-header">
   <div class="brand">
-    <h1>BATTLE OF THE PADDLES × MRSA</h1>
+    <h1 id="site-title">BATTLE OF THE PADDLES × MRSA</h1>
   </div>
   <p class="tagline">Live scores &amp; standings</p>
 </header>
@@ -71,10 +71,26 @@
 <div id="admin-modal" class="modal-overlay" hidden>
   <div class="modal modal-wide">
     <div class="modal-header">
-      <h3>Tournament Setup</h3>
+      <h3>Admin Panel</h3>
       <button id="admin-close" class="btn-icon" aria-label="Close">&times;</button>
     </div>
 
+    <div class="admin-subsection">
+      <h4>Hero Title</h4>
+      <form id="title-form">
+        <label>Title shown at the top of the page
+          <input type="text" id="hero-title-input" maxlength="80" required>
+        </label>
+        <p id="title-error" class="error-text" hidden></p>
+        <div class="modal-actions">
+          <button type="submit" class="btn btn-primary">Save Title</button>
+        </div>
+      </form>
+    </div>
+
+    <hr class="admin-divider">
+
+    <h4>Tournament Setup</h4>
     <form id="setup-form">
       <div class="form-row">
         <label>Number of Players

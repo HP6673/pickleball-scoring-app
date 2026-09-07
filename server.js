@@ -215,8 +215,26 @@ app.post('/api/login', (req, res) => {
 
 app.get('/api/tournament', (req, res) => {
   const data = store.readData();
-  if (!data.tournament) return res.json({ tournament: null, standings: [] });
-  res.json({ tournament: data.tournament, standings: computeStandings(data.tournament) });
+  if (!data.tournament) return res.json({ tournament: null, standings: [], title: data.title });
+  res.json({ tournament: data.tournament, standings: computeStandings(data.tournament), title: data.title });
+});
+
+app.post('/api/settings/title', requireAdmin, async (req, res) => {
+  const title = String((req.body && req.body.title) || '').trim();
+  if (!title || title.length > 80) {
+    return res.status(400).json({ error: 'Title must be between 1 and 80 characters.' });
+  }
+
+  const data = store.readData();
+  data.title = title;
+
+  try {
+    await store.writeData(data);
+    res.json({ title: data.title });
+  } catch (e) {
+    console.error(e);
+    res.status(500).json({ error: 'Could not save title. Try again.' });
+  }
 });
 
 app.post('/api/tournament', requireAdmin, async (req, res) => {

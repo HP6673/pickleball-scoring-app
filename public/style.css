@@ -378,6 +378,20 @@ tbody tr:first-child {
   justify-content: space-between;
 }
 
+.admin-subsection h4,
+.modal-wide > h4 {
+  margin: 0 0 10px;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  color: var(--court-blue-dark);
+}
+
+.admin-divider {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 22px 0;
+}
+
 .btn-icon {
   background: none;
   border: none;

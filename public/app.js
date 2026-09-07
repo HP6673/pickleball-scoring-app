@@ -1,6 +1,7 @@
 (function () {
   const TOKEN_KEY = 'pb_admin_token';
   let currentTournament = null;
+  let currentTitle = '';
   let pollTimer = null;
 
   const el = (id) => document.getElementById(id);
@@ -15,10 +16,16 @@
       const res = await fetch('/api/tournament');
       const data = await res.json();
       currentTournament = data.tournament;
+      if (data.title) applyTitle(data.title);
       render(data.tournament, data.standings);
     } catch (e) {
       console.error('Failed to load tournament', e);
     }
+  }
+
+  function applyTitle(title) {
+    currentTitle = title;
+    el('site-title').textContent = title;
   }
 
   function render(tournament, standings) {
@@ -217,9 +224,40 @@
   // ---------- admin: setup modal ----------
   function openAdminModal() {
     adminModal.hidden = false;
+    el('hero-title-input').value = currentTitle;
+    el('title-error').hidden = true;
     buildPlayerFields();
   }
   el('admin-close').addEventListener('click', () => (adminModal.hidden = true));
+
+  el('title-form').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const errEl = el('title-error');
+    errEl.hidden = true;
+
+    const title = el('hero-title-input').value.trim();
+
+    try {
+      const res = await fetch('/api/settings/title', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-admin-token': getToken() || ''
+        },
+        body: JSON.stringify({ title })
+      });
+      const data = await res.json();
+      if (!res.ok) {
+        errEl.textContent = data.error || 'Could not save title';
+        errEl.hidden = false;
+        return;
+      }
+      applyTitle(data.title);
+    } catch (e) {
+      errEl.textContent = 'Something went wrong. Try again.';
+      errEl.hidden = false;
+    }
+  });
 
   const numPlayersInput = el('num-players');
   const formatSelect = el('format-select');

@@ -10,7 +10,9 @@ const GITHUB_FILE_PATH = process.env.GITHUB_FILE_PATH || 'data.json';
 
 const useGitHub = Boolean(GITHUB_TOKEN);
 
-let cache = { tournament: null };
+const DEFAULT_TITLE = 'BATTLE OF THE PADDLES × MRSA';
+
+let cache = { tournament: null, title: DEFAULT_TITLE };
 let sha = null;
 let chain = Promise.resolve();
 
@@ -29,14 +31,16 @@ function githubHeaders() {
 async function githubFetch() {
   const res = await fetch(`${contentsUrl()}?ref=${GITHUB_BRANCH}`, { headers: githubHeaders() });
   if (res.status === 404) {
-    return { data: { tournament: null }, sha: null };
+    return { data: { tournament: null, title: DEFAULT_TITLE }, sha: null };
   }
   if (!res.ok) {
     throw new Error(`GitHub read failed: ${res.status} ${await res.text()}`);
   }
   const json = await res.json();
   const content = Buffer.from(json.content, 'base64').toString('utf8');
-  return { data: content.trim() ? JSON.parse(content) : { tournament: null }, sha: json.sha };
+  const data = content.trim() ? JSON.parse(content) : { tournament: null };
+  if (!data.title) data.title = DEFAULT_TITLE;
+  return { data, sha: json.sha };
 }
 
 function sleep(ms) {
@@ -96,9 +100,11 @@ async function githubPush(data) {
 
 function localRead() {
   try {
-    return JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
+    const data = JSON.parse(fs.readFileSync(DATA_FILE, 'utf8'));
+    if (!data.title) data.title = DEFAULT_TITLE;
+    return data;
   } catch (e) {
-    return { tournament: null };
+    return { tournament: null, title: DEFAULT_TITLE };
   }
 }
 
