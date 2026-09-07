@@ -174,11 +174,11 @@ tbody tr:first-child {
 .round-heading .round-badge {
   font-family: var(--font-heading);
   font-weight: 700;
-  font-size: 1.15rem;
-  letter-spacing: 0.02em;
+  font-size: 1.45rem;
+  letter-spacing: 0.01em;
   color: #fff;
   background: linear-gradient(120deg, var(--court-teal), var(--court-blue));
-  padding: 8px 20px;
+  padding: 10px 26px;
   border-radius: 999px;
   white-space: nowrap;
 }
@@ -228,7 +228,7 @@ tbody tr:first-child {
   align-items: center;
   gap: 8px;
   font-weight: 600;
-  font-size: 1.15rem;
+  font-size: 1.4rem;
   flex: 1;
   min-width: 0;
   overflow-wrap: break-word;
@@ -246,10 +246,10 @@ tbody tr:first-child {
 .team-dot.b { background: var(--accent-orange); }
 
 .score-value {
-  min-width: 34px;
+  min-width: 42px;
   text-align: center;
   font-family: var(--font-heading);
-  font-size: 1.7rem;
+  font-size: 2.1rem;
   font-weight: 800;
   color: var(--ink);
 }
