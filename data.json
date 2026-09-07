@@ -4,41 +4,105 @@
     "players": [
       {
         "id": 1,
-        "name": "John"
+        "name": "1"
       },
       {
         "id": 2,
-        "name": "Jack"
+        "name": "2"
       },
       {
         "id": 3,
-        "name": "Jay"
+        "name": "3"
       },
       {
         "id": 4,
-        "name": "Bob"
+        "name": "4"
       },
       {
         "id": 5,
-        "name": "Billy"
+        "name": "5"
       },
       {
         "id": 6,
-        "name": "Mark"
+        "name": "6"
       },
       {
         "id": 7,
-        "name": "Marshall"
+        "name": "7"
       },
       {
         "id": 8,
-        "name": "Noah"
+        "name": "8"
+      },
+      {
+        "id": 9,
+        "name": "9"
+      },
+      {
+        "id": 10,
+        "name": "10"
+      },
+      {
+        "id": 11,
+        "name": "11"
+      },
+      {
+        "id": 12,
+        "name": "12"
+      },
+      {
+        "id": 13,
+        "name": "13"
+      },
+      {
+        "id": 14,
+        "name": "14"
+      },
+      {
+        "id": 15,
+        "name": "15"
+      },
+      {
+        "id": 16,
+        "name": "16"
+      },
+      {
+        "id": 17,
+        "name": "17"
+      },
+      {
+        "id": 18,
+        "name": "18"
+      },
+      {
+        "id": 19,
+        "name": "19"
+      },
+      {
+        "id": 20,
+        "name": "20"
+      },
+      {
+        "id": 21,
+        "name": "21"
+      },
+      {
+        "id": 22,
+        "name": "22"
+      },
+      {
+        "id": 23,
+        "name": "23"
+      },
+      {
+        "id": 24,
+        "name": "24"
       }
     ],
     "teams": [
       {
         "id": 1,
-        "name": "John / Jack",
+        "name": "1 / 2",
         "playerIds": [
           1,
           2
@@ -46,7 +110,7 @@
       },
       {
         "id": 2,
-        "name": "Jay / Bob",
+        "name": "3 / 4",
         "playerIds": [
           3,
           4
@@ -54,7 +118,7 @@
       },
       {
         "id": 3,
-        "name": "Billy / Mark",
+        "name": "5 / 6",
         "playerIds": [
           5,
           6
@@ -62,10 +126,74 @@
       },
       {
         "id": 4,
-        "name": "Marshall / Noah",
+        "name": "7 / 8",
         "playerIds": [
           7,
           8
+        ]
+      },
+      {
+        "id": 5,
+        "name": "9 / 10",
+        "playerIds": [
+          9,
+          10
+        ]
+      },
+      {
+        "id": 6,
+        "name": "11 / 12",
+        "playerIds": [
+          11,
+          12
+        ]
+      },
+      {
+        "id": 7,
+        "name": "13 / 14",
+        "playerIds": [
+          13,
+          14
+        ]
+      },
+      {
+        "id": 8,
+        "name": "15 / 16",
+        "playerIds": [
+          15,
+          16
+        ]
+      },
+      {
+        "id": 9,
+        "name": "17 / 18",
+        "playerIds": [
+          17,
+          18
+        ]
+      },
+      {
+        "id": 10,
+        "name": "19 / 20",
+        "playerIds": [
+          19,
+          20
+        ]
+      },
+      {
+        "id": 11,
+        "name": "21 / 22",
+        "playerIds": [
+          21,
+          22
+        ]
+      },
+      {
+        "id": 12,
+        "name": "23 / 24",
+        "playerIds": [
+          23,
+          24
         ]
       }
     ],
@@ -74,66 +202,1054 @@
         "id": 1,
         "round": 1,
         "teamAId": 1,
-        "teamBId": 4,
-        "teamAName": "John / Jack",
-        "teamBName": "Marshall / Noah",
+        "teamBId": 12,
+        "teamAName": "1 / 2",
+        "teamBName": "23 / 24",
         "teamAPlayerIds": [
           1,
           2
         ],
         "teamBPlayerIds": [
-          7,
-          8
+          23,
+          24
         ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false
+        "scoreA": 11,
+        "scoreB": 2,
+        "completed": true
       },
       {
         "id": 2,
         "round": 1,
         "teamAId": 2,
-        "teamBId": 3,
-        "teamAName": "Jay / Bob",
-        "teamBName": "Billy / Mark",
+        "teamBId": 11,
+        "teamAName": "3 / 4",
+        "teamBName": "21 / 22",
         "teamAPlayerIds": [
           3,
           4
         ],
         "teamBPlayerIds": [
-          5,
-          6
+          21,
+          22
         ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false
+        "scoreA": 2,
+        "scoreB": 11,
+        "completed": true
       },
       {
         "id": 3,
-        "round": 2,
-        "teamAId": 1,
-        "teamBId": 3,
-        "teamAName": "John / Jack",
-        "teamBName": "Billy / Mark",
+        "round": 1,
+        "teamAId": 3,
+        "teamBId": 10,
+        "teamAName": "5 / 6",
+        "teamBName": "19 / 20",
         "teamAPlayerIds": [
-          1,
-          2
-        ],
-        "teamBPlayerIds": [
           5,
           6
         ],
-        "scoreA": 0,
+        "teamBPlayerIds": [
+          19,
+          20
+        ],
+        "scoreA": 11,
         "scoreB": 0,
-        "completed": false
+        "completed": true
       },
       {
         "id": 4,
+        "round": 1,
+        "teamAId": 4,
+        "teamBId": 9,
+        "teamAName": "7 / 8",
+        "teamBName": "17 / 18",
+        "teamAPlayerIds": [
+          7,
+          8
+        ],
+        "teamBPlayerIds": [
+          17,
+          18
+        ],
+        "scoreA": 11,
+        "scoreB": 5,
+        "completed": true
+      },
+      {
+        "id": 5,
+        "round": 1,
+        "teamAId": 5,
+        "teamBId": 8,
+        "teamAName": "9 / 10",
+        "teamBName": "15 / 16",
+        "teamAPlayerIds": [
+          9,
+          10
+        ],
+        "teamBPlayerIds": [
+          15,
+          16
+        ],
+        "scoreA": 5,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 6,
+        "round": 1,
+        "teamAId": 6,
+        "teamBId": 7,
+        "teamAName": "11 / 12",
+        "teamBName": "13 / 14",
+        "teamAPlayerIds": [
+          11,
+          12
+        ],
+        "teamBPlayerIds": [
+          13,
+          14
+        ],
+        "scoreA": 11,
+        "scoreB": 2,
+        "completed": true
+      },
+      {
+        "id": 7,
+        "round": 2,
+        "teamAId": 1,
+        "teamBId": 11,
+        "teamAName": "1 / 2",
+        "teamBName": "21 / 22",
+        "teamAPlayerIds": [
+          1,
+          2
+        ],
+        "teamBPlayerIds": [
+          21,
+          22
+        ],
+        "scoreA": 6,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 8,
+        "round": 2,
+        "teamAId": 12,
+        "teamBId": 10,
+        "teamAName": "23 / 24",
+        "teamBName": "19 / 20",
+        "teamAPlayerIds": [
+          23,
+          24
+        ],
+        "teamBPlayerIds": [
+          19,
+          20
+        ],
+        "scoreA": 13,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 9,
+        "round": 2,
+        "teamAId": 2,
+        "teamBId": 9,
+        "teamAName": "3 / 4",
+        "teamBName": "17 / 18",
+        "teamAPlayerIds": [
+          3,
+          4
+        ],
+        "teamBPlayerIds": [
+          17,
+          18
+        ],
+        "scoreA": 0,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 10,
+        "round": 2,
+        "teamAId": 3,
+        "teamBId": 8,
+        "teamAName": "5 / 6",
+        "teamBName": "15 / 16",
+        "teamAPlayerIds": [
+          5,
+          6
+        ],
+        "teamBPlayerIds": [
+          15,
+          16
+        ],
+        "scoreA": 10,
+        "scoreB": 12,
+        "completed": true
+      },
+      {
+        "id": 11,
         "round": 2,
         "teamAId": 4,
+        "teamBId": 7,
+        "teamAName": "7 / 8",
+        "teamBName": "13 / 14",
+        "teamAPlayerIds": [
+          7,
+          8
+        ],
+        "teamBPlayerIds": [
+          13,
+          14
+        ],
+        "scoreA": 11,
+        "scoreB": 7,
+        "completed": true
+      },
+      {
+        "id": 12,
+        "round": 2,
+        "teamAId": 5,
+        "teamBId": 6,
+        "teamAName": "9 / 10",
+        "teamBName": "11 / 12",
+        "teamAPlayerIds": [
+          9,
+          10
+        ],
+        "teamBPlayerIds": [
+          11,
+          12
+        ],
+        "scoreA": 11,
+        "scoreB": 9,
+        "completed": true
+      },
+      {
+        "id": 13,
+        "round": 3,
+        "teamAId": 1,
+        "teamBId": 10,
+        "teamAName": "1 / 2",
+        "teamBName": "19 / 20",
+        "teamAPlayerIds": [
+          1,
+          2
+        ],
+        "teamBPlayerIds": [
+          19,
+          20
+        ],
+        "scoreA": 11,
+        "scoreB": 1,
+        "completed": true
+      },
+      {
+        "id": 14,
+        "round": 3,
+        "teamAId": 11,
+        "teamBId": 9,
+        "teamAName": "21 / 22",
+        "teamBName": "17 / 18",
+        "teamAPlayerIds": [
+          21,
+          22
+        ],
+        "teamBPlayerIds": [
+          17,
+          18
+        ],
+        "scoreA": 11,
+        "scoreB": 7,
+        "completed": true
+      },
+      {
+        "id": 15,
+        "round": 3,
+        "teamAId": 12,
+        "teamBId": 8,
+        "teamAName": "23 / 24",
+        "teamBName": "15 / 16",
+        "teamAPlayerIds": [
+          23,
+          24
+        ],
+        "teamBPlayerIds": [
+          15,
+          16
+        ],
+        "scoreA": 2,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 16,
+        "round": 3,
+        "teamAId": 2,
+        "teamBId": 7,
+        "teamAName": "3 / 4",
+        "teamBName": "13 / 14",
+        "teamAPlayerIds": [
+          3,
+          4
+        ],
+        "teamBPlayerIds": [
+          13,
+          14
+        ],
+        "scoreA": 3,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 17,
+        "round": 3,
+        "teamAId": 3,
+        "teamBId": 6,
+        "teamAName": "5 / 6",
+        "teamBName": "11 / 12",
+        "teamAPlayerIds": [
+          5,
+          6
+        ],
+        "teamBPlayerIds": [
+          11,
+          12
+        ],
+        "scoreA": 3,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 18,
+        "round": 3,
+        "teamAId": 4,
+        "teamBId": 5,
+        "teamAName": "7 / 8",
+        "teamBName": "9 / 10",
+        "teamAPlayerIds": [
+          7,
+          8
+        ],
+        "teamBPlayerIds": [
+          9,
+          10
+        ],
+        "scoreA": 4,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 19,
+        "round": 4,
+        "teamAId": 1,
+        "teamBId": 9,
+        "teamAName": "1 / 2",
+        "teamBName": "17 / 18",
+        "teamAPlayerIds": [
+          1,
+          2
+        ],
+        "teamBPlayerIds": [
+          17,
+          18
+        ],
+        "scoreA": 11,
+        "scoreB": 2,
+        "completed": true
+      },
+      {
+        "id": 20,
+        "round": 4,
+        "teamAId": 10,
+        "teamBId": 8,
+        "teamAName": "19 / 20",
+        "teamBName": "15 / 16",
+        "teamAPlayerIds": [
+          19,
+          20
+        ],
+        "teamBPlayerIds": [
+          15,
+          16
+        ],
+        "scoreA": 9,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 21,
+        "round": 4,
+        "teamAId": 11,
+        "teamBId": 7,
+        "teamAName": "21 / 22",
+        "teamBName": "13 / 14",
+        "teamAPlayerIds": [
+          21,
+          22
+        ],
+        "teamBPlayerIds": [
+          13,
+          14
+        ],
+        "scoreA": 3,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 22,
+        "round": 4,
+        "teamAId": 12,
+        "teamBId": 6,
+        "teamAName": "23 / 24",
+        "teamBName": "11 / 12",
+        "teamAPlayerIds": [
+          23,
+          24
+        ],
+        "teamBPlayerIds": [
+          11,
+          12
+        ],
+        "scoreA": 11,
+        "scoreB": 2,
+        "completed": true
+      },
+      {
+        "id": 23,
+        "round": 4,
+        "teamAId": 2,
+        "teamBId": 5,
+        "teamAName": "3 / 4",
+        "teamBName": "9 / 10",
+        "teamAPlayerIds": [
+          3,
+          4
+        ],
+        "teamBPlayerIds": [
+          9,
+          10
+        ],
+        "scoreA": 11,
+        "scoreB": 7,
+        "completed": true
+      },
+      {
+        "id": 24,
+        "round": 4,
+        "teamAId": 3,
+        "teamBId": 4,
+        "teamAName": "5 / 6",
+        "teamBName": "7 / 8",
+        "teamAPlayerIds": [
+          5,
+          6
+        ],
+        "teamBPlayerIds": [
+          7,
+          8
+        ],
+        "scoreA": 6,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 25,
+        "round": 5,
+        "teamAId": 1,
+        "teamBId": 8,
+        "teamAName": "1 / 2",
+        "teamBName": "15 / 16",
+        "teamAPlayerIds": [
+          1,
+          2
+        ],
+        "teamBPlayerIds": [
+          15,
+          16
+        ],
+        "scoreA": 11,
+        "scoreB": 4,
+        "completed": true
+      },
+      {
+        "id": 26,
+        "round": 5,
+        "teamAId": 9,
+        "teamBId": 7,
+        "teamAName": "17 / 18",
+        "teamBName": "13 / 14",
+        "teamAPlayerIds": [
+          17,
+          18
+        ],
+        "teamBPlayerIds": [
+          13,
+          14
+        ],
+        "scoreA": 1,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 27,
+        "round": 5,
+        "teamAId": 10,
+        "teamBId": 6,
+        "teamAName": "19 / 20",
+        "teamBName": "11 / 12",
+        "teamAPlayerIds": [
+          19,
+          20
+        ],
+        "teamBPlayerIds": [
+          11,
+          12
+        ],
+        "scoreA": 11,
+        "scoreB": 7,
+        "completed": true
+      },
+      {
+        "id": 28,
+        "round": 5,
+        "teamAId": 11,
+        "teamBId": 5,
+        "teamAName": "21 / 22",
+        "teamBName": "9 / 10",
+        "teamAPlayerIds": [
+          21,
+          22
+        ],
+        "teamBPlayerIds": [
+          9,
+          10
+        ],
+        "scoreA": 7,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 29,
+        "round": 5,
+        "teamAId": 12,
+        "teamBId": 4,
+        "teamAName": "23 / 24",
+        "teamBName": "7 / 8",
+        "teamAPlayerIds": [
+          23,
+          24
+        ],
+        "teamBPlayerIds": [
+          7,
+          8
+        ],
+        "scoreA": 2,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 30,
+        "round": 5,
+        "teamAId": 2,
+        "teamBId": 3,
+        "teamAName": "3 / 4",
+        "teamBName": "5 / 6",
+        "teamAPlayerIds": [
+          3,
+          4
+        ],
+        "teamBPlayerIds": [
+          5,
+          6
+        ],
+        "scoreA": 2,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 31,
+        "round": 6,
+        "teamAId": 1,
+        "teamBId": 7,
+        "teamAName": "1 / 2",
+        "teamBName": "13 / 14",
+        "teamAPlayerIds": [
+          1,
+          2
+        ],
+        "teamBPlayerIds": [
+          13,
+          14
+        ],
+        "scoreA": 11,
+        "scoreB": 6,
+        "completed": true
+      },
+      {
+        "id": 32,
+        "round": 6,
+        "teamAId": 8,
+        "teamBId": 6,
+        "teamAName": "15 / 16",
+        "teamBName": "11 / 12",
+        "teamAPlayerIds": [
+          15,
+          16
+        ],
+        "teamBPlayerIds": [
+          11,
+          12
+        ],
+        "scoreA": 3,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 33,
+        "round": 6,
+        "teamAId": 9,
+        "teamBId": 5,
+        "teamAName": "17 / 18",
+        "teamBName": "9 / 10",
+        "teamAPlayerIds": [
+          17,
+          18
+        ],
+        "teamBPlayerIds": [
+          9,
+          10
+        ],
+        "scoreA": 9,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 34,
+        "round": 6,
+        "teamAId": 10,
+        "teamBId": 4,
+        "teamAName": "19 / 20",
+        "teamBName": "7 / 8",
+        "teamAPlayerIds": [
+          19,
+          20
+        ],
+        "teamBPlayerIds": [
+          7,
+          8
+        ],
+        "scoreA": 4,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 35,
+        "round": 6,
+        "teamAId": 11,
+        "teamBId": 3,
+        "teamAName": "21 / 22",
+        "teamBName": "5 / 6",
+        "teamAPlayerIds": [
+          21,
+          22
+        ],
+        "teamBPlayerIds": [
+          5,
+          6
+        ],
+        "scoreA": 11,
+        "scoreB": 9,
+        "completed": true
+      },
+      {
+        "id": 36,
+        "round": 6,
+        "teamAId": 12,
         "teamBId": 2,
-        "teamAName": "Marshall / Noah",
-        "teamBName": "Jay / Bob",
+        "teamAName": "23 / 24",
+        "teamBName": "3 / 4",
+        "teamAPlayerIds": [
+          23,
+          24
+        ],
+        "teamBPlayerIds": [
+          3,
+          4
+        ],
+        "scoreA": 1,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 37,
+        "round": 7,
+        "teamAId": 1,
+        "teamBId": 6,
+        "teamAName": "1 / 2",
+        "teamBName": "11 / 12",
+        "teamAPlayerIds": [
+          1,
+          2
+        ],
+        "teamBPlayerIds": [
+          11,
+          12
+        ],
+        "scoreA": 5,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 38,
+        "round": 7,
+        "teamAId": 7,
+        "teamBId": 5,
+        "teamAName": "13 / 14",
+        "teamBName": "9 / 10",
+        "teamAPlayerIds": [
+          13,
+          14
+        ],
+        "teamBPlayerIds": [
+          9,
+          10
+        ],
+        "scoreA": 2,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 39,
+        "round": 7,
+        "teamAId": 8,
+        "teamBId": 4,
+        "teamAName": "15 / 16",
+        "teamBName": "7 / 8",
+        "teamAPlayerIds": [
+          15,
+          16
+        ],
+        "teamBPlayerIds": [
+          7,
+          8
+        ],
+        "scoreA": 11,
+        "scoreB": 9,
+        "completed": true
+      },
+      {
+        "id": 40,
+        "round": 7,
+        "teamAId": 9,
+        "teamBId": 3,
+        "teamAName": "17 / 18",
+        "teamBName": "5 / 6",
+        "teamAPlayerIds": [
+          17,
+          18
+        ],
+        "teamBPlayerIds": [
+          5,
+          6
+        ],
+        "scoreA": 5,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 41,
+        "round": 7,
+        "teamAId": 10,
+        "teamBId": 2,
+        "teamAName": "19 / 20",
+        "teamBName": "3 / 4",
+        "teamAPlayerIds": [
+          19,
+          20
+        ],
+        "teamBPlayerIds": [
+          3,
+          4
+        ],
+        "scoreA": 3,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 42,
+        "round": 7,
+        "teamAId": 11,
+        "teamBId": 12,
+        "teamAName": "21 / 22",
+        "teamBName": "23 / 24",
+        "teamAPlayerIds": [
+          21,
+          22
+        ],
+        "teamBPlayerIds": [
+          23,
+          24
+        ],
+        "scoreA": 2,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 43,
+        "round": 8,
+        "teamAId": 1,
+        "teamBId": 5,
+        "teamAName": "1 / 2",
+        "teamBName": "9 / 10",
+        "teamAPlayerIds": [
+          1,
+          2
+        ],
+        "teamBPlayerIds": [
+          9,
+          10
+        ],
+        "scoreA": 2,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 44,
+        "round": 8,
+        "teamAId": 6,
+        "teamBId": 4,
+        "teamAName": "11 / 12",
+        "teamBName": "7 / 8",
+        "teamAPlayerIds": [
+          11,
+          12
+        ],
+        "teamBPlayerIds": [
+          7,
+          8
+        ],
+        "scoreA": 8,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 45,
+        "round": 8,
+        "teamAId": 7,
+        "teamBId": 3,
+        "teamAName": "13 / 14",
+        "teamBName": "5 / 6",
+        "teamAPlayerIds": [
+          13,
+          14
+        ],
+        "teamBPlayerIds": [
+          5,
+          6
+        ],
+        "scoreA": 11,
+        "scoreB": 1,
+        "completed": true
+      },
+      {
+        "id": 46,
+        "round": 8,
+        "teamAId": 8,
+        "teamBId": 2,
+        "teamAName": "15 / 16",
+        "teamBName": "3 / 4",
+        "teamAPlayerIds": [
+          15,
+          16
+        ],
+        "teamBPlayerIds": [
+          3,
+          4
+        ],
+        "scoreA": 4,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 47,
+        "round": 8,
+        "teamAId": 9,
+        "teamBId": 12,
+        "teamAName": "17 / 18",
+        "teamBName": "23 / 24",
+        "teamAPlayerIds": [
+          17,
+          18
+        ],
+        "teamBPlayerIds": [
+          23,
+          24
+        ],
+        "scoreA": 11,
+        "scoreB": 0,
+        "completed": true
+      },
+      {
+        "id": 48,
+        "round": 8,
+        "teamAId": 10,
+        "teamBId": 11,
+        "teamAName": "19 / 20",
+        "teamBName": "21 / 22",
+        "teamAPlayerIds": [
+          19,
+          20
+        ],
+        "teamBPlayerIds": [
+          21,
+          22
+        ],
+        "scoreA": 4,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 49,
+        "round": 9,
+        "teamAId": 1,
+        "teamBId": 4,
+        "teamAName": "1 / 2",
+        "teamBName": "7 / 8",
+        "teamAPlayerIds": [
+          1,
+          2
+        ],
+        "teamBPlayerIds": [
+          7,
+          8
+        ],
+        "scoreA": 11,
+        "scoreB": 7,
+        "completed": true
+      },
+      {
+        "id": 50,
+        "round": 9,
+        "teamAId": 5,
+        "teamBId": 3,
+        "teamAName": "9 / 10",
+        "teamBName": "5 / 6",
+        "teamAPlayerIds": [
+          9,
+          10
+        ],
+        "teamBPlayerIds": [
+          5,
+          6
+        ],
+        "scoreA": 11,
+        "scoreB": 1,
+        "completed": true
+      },
+      {
+        "id": 51,
+        "round": 9,
+        "teamAId": 6,
+        "teamBId": 2,
+        "teamAName": "11 / 12",
+        "teamBName": "3 / 4",
+        "teamAPlayerIds": [
+          11,
+          12
+        ],
+        "teamBPlayerIds": [
+          3,
+          4
+        ],
+        "scoreA": 0,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 52,
+        "round": 9,
+        "teamAId": 7,
+        "teamBId": 12,
+        "teamAName": "13 / 14",
+        "teamBName": "23 / 24",
+        "teamAPlayerIds": [
+          13,
+          14
+        ],
+        "teamBPlayerIds": [
+          23,
+          24
+        ],
+        "scoreA": 2,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 53,
+        "round": 9,
+        "teamAId": 8,
+        "teamBId": 11,
+        "teamAName": "15 / 16",
+        "teamBName": "21 / 22",
+        "teamAPlayerIds": [
+          15,
+          16
+        ],
+        "teamBPlayerIds": [
+          21,
+          22
+        ],
+        "scoreA": 8,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 54,
+        "round": 9,
+        "teamAId": 9,
+        "teamBId": 10,
+        "teamAName": "17 / 18",
+        "teamBName": "19 / 20",
+        "teamAPlayerIds": [
+          17,
+          18
+        ],
+        "teamBPlayerIds": [
+          19,
+          20
+        ],
+        "scoreA": 11,
+        "scoreB": 8,
+        "completed": true
+      },
+      {
+        "id": 55,
+        "round": 10,
+        "teamAId": 1,
+        "teamBId": 3,
+        "teamAName": "1 / 2",
+        "teamBName": "5 / 6",
+        "teamAPlayerIds": [
+          1,
+          2
+        ],
+        "teamBPlayerIds": [
+          5,
+          6
+        ],
+        "scoreA": 11,
+        "scoreB": 9,
+        "completed": true
+      },
+      {
+        "id": 56,
+        "round": 10,
+        "teamAId": 4,
+        "teamBId": 2,
+        "teamAName": "7 / 8",
+        "teamBName": "3 / 4",
         "teamAPlayerIds": [
           7,
           8
@@ -142,17 +1258,93 @@
           3,
           4
         ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false
+        "scoreA": 2,
+        "scoreB": 11,
+        "completed": true
       },
       {
-        "id": 5,
-        "round": 3,
+        "id": 57,
+        "round": 10,
+        "teamAId": 5,
+        "teamBId": 12,
+        "teamAName": "9 / 10",
+        "teamBName": "23 / 24",
+        "teamAPlayerIds": [
+          9,
+          10
+        ],
+        "teamBPlayerIds": [
+          23,
+          24
+        ],
+        "scoreA": 2,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 58,
+        "round": 10,
+        "teamAId": 6,
+        "teamBId": 11,
+        "teamAName": "11 / 12",
+        "teamBName": "21 / 22",
+        "teamAPlayerIds": [
+          11,
+          12
+        ],
+        "teamBPlayerIds": [
+          21,
+          22
+        ],
+        "scoreA": 3,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 59,
+        "round": 10,
+        "teamAId": 7,
+        "teamBId": 10,
+        "teamAName": "13 / 14",
+        "teamBName": "19 / 20",
+        "teamAPlayerIds": [
+          13,
+          14
+        ],
+        "teamBPlayerIds": [
+          19,
+          20
+        ],
+        "scoreA": 11,
+        "scoreB": 3,
+        "completed": true
+      },
+      {
+        "id": 60,
+        "round": 10,
+        "teamAId": 8,
+        "teamBId": 9,
+        "teamAName": "15 / 16",
+        "teamBName": "17 / 18",
+        "teamAPlayerIds": [
+          15,
+          16
+        ],
+        "teamBPlayerIds": [
+          17,
+          18
+        ],
+        "scoreA": 3,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 61,
+        "round": 11,
         "teamAId": 1,
         "teamBId": 2,
-        "teamAName": "John / Jack",
-        "teamBName": "Jay / Bob",
+        "teamAName": "1 / 2",
+        "teamBName": "3 / 4",
         "teamAPlayerIds": [
           1,
           2
@@ -162,29 +1354,105 @@
           4
         ],
         "scoreA": 0,
-        "scoreB": 0,
-        "completed": false
+        "scoreB": 11,
+        "completed": true
       },
       {
-        "id": 6,
-        "round": 3,
+        "id": 62,
+        "round": 11,
         "teamAId": 3,
-        "teamBId": 4,
-        "teamAName": "Billy / Mark",
-        "teamBName": "Marshall / Noah",
+        "teamBId": 12,
+        "teamAName": "5 / 6",
+        "teamBName": "23 / 24",
         "teamAPlayerIds": [
           5,
           6
         ],
         "teamBPlayerIds": [
+          23,
+          24
+        ],
+        "scoreA": 2,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 63,
+        "round": 11,
+        "teamAId": 4,
+        "teamBId": 11,
+        "teamAName": "7 / 8",
+        "teamBName": "21 / 22",
+        "teamAPlayerIds": [
           7,
           8
         ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false
+        "teamBPlayerIds": [
+          21,
+          22
+        ],
+        "scoreA": 2,
+        "scoreB": 11,
+        "completed": true
+      },
+      {
+        "id": 64,
+        "round": 11,
+        "teamAId": 5,
+        "teamBId": 10,
+        "teamAName": "9 / 10",
+        "teamBName": "19 / 20",
+        "teamAPlayerIds": [
+          9,
+          10
+        ],
+        "teamBPlayerIds": [
+          19,
+          20
+        ],
+        "scoreA": 11,
+        "scoreB": 1,
+        "completed": true
+      },
+      {
+        "id": 65,
+        "round": 11,
+        "teamAId": 6,
+        "teamBId": 9,
+        "teamAName": "11 / 12",
+        "teamBName": "17 / 18",
+        "teamAPlayerIds": [
+          11,
+          12
+        ],
+        "teamBPlayerIds": [
+          17,
+          18
+        ],
+        "scoreA": 11,
+        "scoreB": 8,
+        "completed": true
+      },
+      {
+        "id": 66,
+        "round": 11,
+        "teamAId": 7,
+        "teamBId": 8,
+        "teamAName": "13 / 14",
+        "teamBName": "15 / 16",
+        "teamAPlayerIds": [
+          13,
+          14
+        ],
+        "teamBPlayerIds": [
+          15,
+          16
+        ],
+        "scoreA": 11,
+        "scoreB": 9,
+        "completed": true
       }
     ],
-    "createdAt": "2026-09-06T03:09:50.407Z"
+    "createdAt": "2026-09-06T06:08:57.470Z"
   }
 }
