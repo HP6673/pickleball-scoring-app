@@ -1,6 +1,6 @@
 {
   "tournament": {
-    "format": "fixed",
+    "format": "rotating",
     "players": [
       {
         "id": 1,
@@ -35,156 +35,237 @@
         "name": "Bob Biiebhjutuarwrnfjuafkjsf"
       }
     ],
-    "teams": [
-      {
-        "id": 1,
-        "name": "Shabbir Shams / Mohammed Khorakhiwala",
-        "playerIds": [
-          1,
-          2
-        ]
-      },
-      {
-        "id": 2,
-        "name": "Adman Smith / Yusuf Harianawala",
-        "playerIds": [
-          3,
-          4
-        ]
-      },
-      {
-        "id": 3,
-        "name": "Billy Bob / Andy Kaararahbiyunzadvbw",
-        "playerIds": [
-          5,
-          6
-        ]
-      },
-      {
-        "id": 4,
-        "name": "Hazel Crest / Bob Biiebhjutuarwrnfjuafkjsf",
-        "playerIds": [
-          7,
-          8
-        ]
-      }
-    ],
+    "teams": [],
     "games": [
       {
         "id": 1,
         "round": 1,
-        "teamAId": 1,
-        "teamBId": 4,
-        "teamAName": "Shabbir Shams / Mohammed Khorakhiwala",
-        "teamBName": "Hazel Crest / Bob Biiebhjutuarwrnfjuafkjsf",
+        "teamAName": "Adman Smith / Yusuf Harianawala",
+        "teamBName": "Hazel Crest / Billy Bob",
         "teamAPlayerIds": [
-          1,
-          2
+          3,
+          4
         ],
         "teamBPlayerIds": [
           7,
-          8
+          5
         ],
         "scoreA": 0,
         "scoreB": 0,
-        "completed": false
+        "completed": false,
+        "sitOut": null,
+        "byeTeam": null
       },
       {
         "id": 2,
         "round": 1,
-        "teamAId": 2,
-        "teamBId": 3,
-        "teamAName": "Adman Smith / Yusuf Harianawala",
-        "teamBName": "Billy Bob / Andy Kaararahbiyunzadvbw",
+        "teamAName": "Shabbir Shams / Mohammed Khorakhiwala",
+        "teamBName": "Andy Kaararahbiyunzadvbw / Bob Biiebhjutuarwrnfjuafkjsf",
         "teamAPlayerIds": [
-          3,
-          4
+          1,
+          2
         ],
         "teamBPlayerIds": [
-          5,
-          6
+          6,
+          8
         ],
         "scoreA": 0,
         "scoreB": 0,
-        "completed": false
+        "completed": false,
+        "sitOut": null,
+        "byeTeam": null
       },
       {
         "id": 3,
         "round": 2,
-        "teamAId": 1,
-        "teamBId": 3,
-        "teamAName": "Shabbir Shams / Mohammed Khorakhiwala",
-        "teamBName": "Billy Bob / Andy Kaararahbiyunzadvbw",
+        "teamAName": "Hazel Crest / Adman Smith",
+        "teamBName": "Billy Bob / Yusuf Harianawala",
         "teamAPlayerIds": [
-          1,
-          2
+          7,
+          3
         ],
         "teamBPlayerIds": [
           5,
-          6
+          4
         ],
         "scoreA": 0,
         "scoreB": 0,
-        "completed": false
+        "completed": false,
+        "sitOut": null,
+        "byeTeam": null
       },
       {
         "id": 4,
         "round": 2,
-        "teamAId": 4,
-        "teamBId": 2,
-        "teamAName": "Hazel Crest / Bob Biiebhjutuarwrnfjuafkjsf",
-        "teamBName": "Adman Smith / Yusuf Harianawala",
+        "teamAName": "Mohammed Khorakhiwala / Bob Biiebhjutuarwrnfjuafkjsf",
+        "teamBName": "Andy Kaararahbiyunzadvbw / Shabbir Shams",
         "teamAPlayerIds": [
-          7,
+          2,
           8
         ],
         "teamBPlayerIds": [
-          3,
-          4
+          6,
+          1
         ],
         "scoreA": 0,
         "scoreB": 0,
-        "completed": false
+        "completed": false,
+        "sitOut": null,
+        "byeTeam": null
       },
       {
         "id": 5,
         "round": 3,
-        "teamAId": 1,
-        "teamBId": 2,
-        "teamAName": "Shabbir Shams / Mohammed Khorakhiwala",
-        "teamBName": "Adman Smith / Yusuf Harianawala",
-        "teamAPlayerIds": [
-          1,
-          2
-        ],
-        "teamBPlayerIds": [
-          3,
-          4
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false
-      },
-      {
-        "id": 6,
-        "round": 3,
-        "teamAId": 3,
-        "teamBId": 4,
         "teamAName": "Billy Bob / Andy Kaararahbiyunzadvbw",
-        "teamBName": "Hazel Crest / Bob Biiebhjutuarwrnfjuafkjsf",
+        "teamBName": "Adman Smith / Bob Biiebhjutuarwrnfjuafkjsf",
         "teamAPlayerIds": [
           5,
           6
         ],
         "teamBPlayerIds": [
-          7,
+          3,
           8
         ],
         "scoreA": 0,
         "scoreB": 0,
-        "completed": false
+        "completed": false,
+        "sitOut": null,
+        "byeTeam": null
+      },
+      {
+        "id": 6,
+        "round": 3,
+        "teamAName": "Yusuf Harianawala / Mohammed Khorakhiwala",
+        "teamBName": "Hazel Crest / Shabbir Shams",
+        "teamAPlayerIds": [
+          4,
+          2
+        ],
+        "teamBPlayerIds": [
+          7,
+          1
+        ],
+        "scoreA": 0,
+        "scoreB": 0,
+        "completed": false,
+        "sitOut": null,
+        "byeTeam": null
+      },
+      {
+        "id": 7,
+        "round": 4,
+        "teamAName": "Hazel Crest / Andy Kaararahbiyunzadvbw",
+        "teamBName": "Yusuf Harianawala / Shabbir Shams",
+        "teamAPlayerIds": [
+          7,
+          6
+        ],
+        "teamBPlayerIds": [
+          4,
+          1
+        ],
+        "scoreA": 0,
+        "scoreB": 0,
+        "completed": false,
+        "sitOut": null,
+        "byeTeam": null
+      },
+      {
+        "id": 8,
+        "round": 4,
+        "teamAName": "Bob Biiebhjutuarwrnfjuafkjsf / Billy Bob",
+        "teamBName": "Mohammed Khorakhiwala / Adman Smith",
+        "teamAPlayerIds": [
+          8,
+          5
+        ],
+        "teamBPlayerIds": [
+          2,
+          3
+        ],
+        "scoreA": 0,
+        "scoreB": 0,
+        "completed": false,
+        "sitOut": null,
+        "byeTeam": null
+      },
+      {
+        "id": 9,
+        "round": 5,
+        "teamAName": "Shabbir Shams / Billy Bob",
+        "teamBName": "Mohammed Khorakhiwala / Andy Kaararahbiyunzadvbw",
+        "teamAPlayerIds": [
+          1,
+          5
+        ],
+        "teamBPlayerIds": [
+          2,
+          6
+        ],
+        "scoreA": 0,
+        "scoreB": 0,
+        "completed": false,
+        "sitOut": null,
+        "byeTeam": null
+      },
+      {
+        "id": 10,
+        "round": 5,
+        "teamAName": "Hazel Crest / Adman Smith",
+        "teamBName": "Yusuf Harianawala / Bob Biiebhjutuarwrnfjuafkjsf",
+        "teamAPlayerIds": [
+          7,
+          3
+        ],
+        "teamBPlayerIds": [
+          4,
+          8
+        ],
+        "scoreA": 0,
+        "scoreB": 0,
+        "completed": false,
+        "sitOut": null,
+        "byeTeam": null
+      },
+      {
+        "id": 11,
+        "round": 6,
+        "teamAName": "Andy Kaararahbiyunzadvbw / Yusuf Harianawala",
+        "teamBName": "Bob Biiebhjutuarwrnfjuafkjsf / Shabbir Shams",
+        "teamAPlayerIds": [
+          6,
+          4
+        ],
+        "teamBPlayerIds": [
+          8,
+          1
+        ],
+        "scoreA": 0,
+        "scoreB": 0,
+        "completed": false,
+        "sitOut": null,
+        "byeTeam": null
+      },
+      {
+        "id": 12,
+        "round": 6,
+        "teamAName": "Mohammed Khorakhiwala / Hazel Crest",
+        "teamBName": "Adman Smith / Billy Bob",
+        "teamAPlayerIds": [
+          2,
+          7
+        ],
+        "teamBPlayerIds": [
+          3,
+          5
+        ],
+        "scoreA": 0,
+        "scoreB": 0,
+        "completed": false,
+        "sitOut": null,
+        "byeTeam": null
       }
     ],
-    "createdAt": "2026-09-07T15:22:11.352Z"
+    "createdAt": "2026-09-07T15:34:08.195Z"
   }
 }
