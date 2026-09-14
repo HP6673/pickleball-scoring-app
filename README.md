@@ -60,22 +60,32 @@ Every tournament setup change and every score tap becomes a commit to this repo,
 
 Every game (round robin and bracket) can also be mirrored to a Google Sheet, so scores can be entered either in the app **or** directly in the spreadsheet — useful if a scorekeeper prefers typing into a familiar grid. The app rewrites the sheet whenever a schedule or score changes, and polls it every 10 seconds for edits made the other way.
 
-| Variable | Required | Notes |
-|---|---|---|
-| `GOOGLE_SHEET_ID` | ✅ | The long ID in the sheet's URL: `https://docs.google.com/spreadsheets/d/`**`THIS_PART`**`/edit` |
-| `GOOGLE_SERVICE_ACCOUNT_EMAIL` | ✅ | The `...@...iam.gserviceaccount.com` address from your service account |
-| `GOOGLE_SERVICE_ACCOUNT_KEY` | ✅ | The service account's private key (see setup below). Set it as a secret env var — never commit it. |
-| `GOOGLE_SHEET_TAB` | – | Tab name to sync (default `Scores`) |
-
 **Setup (one-time):**
 
 1. In the [Google Cloud Console](https://console.cloud.google.com/), create a project (or reuse one) and enable the **Google Sheets API** for it (APIs & Services → Enable APIs and Services → search "Google Sheets API" → Enable).
 2. Go to APIs & Services → Credentials → **Create Credentials → Service Account**. Give it any name and finish the wizard (no roles needed).
-3. Open the new service account → **Keys** tab → **Add Key → Create new key → JSON**. This downloads a `.json` file — keep it private.
-4. From that JSON file, copy the `client_email` value → this is `GOOGLE_SERVICE_ACCOUNT_EMAIL`, and the `private_key` value → this is `GOOGLE_SERVICE_ACCOUNT_KEY` (paste it exactly as it appears, literal `\n` characters and all — it's stored escaped in the JSON file).
-5. Create a new Google Sheet (or use an existing one). Click **Share**, and share it with the `client_email` address from step 4, with **Editor** access.
-6. Copy the Sheet's ID out of its URL for `GOOGLE_SHEET_ID` (see the table above).
-7. Set the three env vars on your host (Render: Dashboard → your service → Environment) and restart the app. The server log will say `Google Sheet sync enabled...` once it picks them up; leave them unset and this feature is silently disabled.
+3. Open the new service account → **Keys** tab → **Add Key → Create new key → JSON**. This downloads a `.json` file — keep it private, and don't commit it.
+4. Create a new Google Sheet (or use an existing one). Click **Share**, and share it with the `client_email` address from that JSON file, with **Editor** access.
+5. Copy the Sheet's ID out of its URL: `https://docs.google.com/spreadsheets/d/`**`THIS_PART`**`/edit` → this is `GOOGLE_SHEET_ID`.
+
+**On Render**, add the ID as a normal env var, and upload the whole JSON key file as a **Secret File** instead of an env var — env vars are single-line text fields, and a private key is long and multi-line, so copy/paste into one easily corrupts it (breaks with an opaque `DECODER routines::unsupported` error). Secret Files avoid that entirely:
+
+1. Dashboard → your service → **Environment** → add `GOOGLE_SHEET_ID` with the value from step 5 above.
+2. Same **Environment** page → **Secret Files** section → **Add Secret File**.
+3. Filename: `google-service-account.json`. Contents: paste the *entire* downloaded JSON file, unmodified (multi-line is fine here — this is a full file editor, not a single-line field).
+4. Save. Render mounts it at `/etc/secrets/google-service-account.json`, which is exactly where the app looks by default.
+5. Redeploy. The log will say `Google Sheet sync enabled...` with no error after it.
+
+**On any other host** (or local dev) without a secret-files feature, fall back to two separate env vars instead — the app checks for the secret file first and only falls back to these if it's absent:
+
+| Variable | Notes |
+|---|---|
+| `GOOGLE_SERVICE_ACCOUNT_EMAIL` | The `client_email` value from the JSON file |
+| `GOOGLE_SERVICE_ACCOUNT_KEY` | The `private_key` value from the JSON file, pasted as one line with its literal `\n` sequences intact (exactly as it appears inside the JSON) |
+| `GOOGLE_SHEET_TAB` | Optional — tab name to sync (default `Scores`) |
+| `GOOGLE_SERVICE_ACCOUNT_JSON_PATH` | Optional — override the secret-file path (default `/etc/secrets/google-service-account.json`) |
+
+Leave all of the above unset and this feature is silently disabled.
 
 The app owns the sheet's layout (one row per game, with a `Key` column like `game-3` or `bracket-1`) and rewrites the whole tab on every change — don't reorder or delete the `Key` column, and don't add extra columns before `Score B`, or the sync will stop matching rows correctly. Only the `Score A` / `Score B` cells are read back from the sheet.
 

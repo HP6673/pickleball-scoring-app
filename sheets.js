@@ -1,24 +1,49 @@
 // Optional Google Sheets integration: mirrors every game's score to a
 // spreadsheet tab so scores can be entered either in the app or directly in
-// the sheet. Entirely inert (every export becomes a no-op) unless the three
-// GOOGLE_* env vars below are set -- see README for setup instructions.
+// the sheet. Entirely inert (every export becomes a no-op) unless credentials
+// below are configured -- see README for setup instructions.
+const fs = require('fs');
 const { JWT } = require('google-auth-library');
 
 const SHEET_ID = process.env.GOOGLE_SHEET_ID;
-const SERVICE_ACCOUNT_EMAIL = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
-// Render (and most hosts) can't store real newlines in an env var, so the
-// key is pasted with literal "\n" sequences and unescaped here.
-const SERVICE_ACCOUNT_KEY = (process.env.GOOGLE_SERVICE_ACCOUNT_KEY || '').replace(/\\n/g, '\n');
 const SHEET_TAB = process.env.GOOGLE_SHEET_TAB || 'Scores';
 
-const enabled = Boolean(SHEET_ID && SERVICE_ACCOUNT_EMAIL && SERVICE_ACCOUNT_KEY);
+// Preferred credential source: a full service-account JSON file (e.g.
+// Render's "Secret Files" feature). This avoids the fragile job of
+// hand-escaping a multi-line private key into a single-line env var, which
+// is easy to corrupt via copy/paste (stray real newlines break the PEM
+// format and fail with an opaque OpenSSL "DECODER routines" error). Render
+// mounts secret files under /etc/secrets/<filename>.
+const JSON_KEY_PATH = process.env.GOOGLE_SERVICE_ACCOUNT_JSON_PATH || '/etc/secrets/google-service-account.json';
+
+function loadCredentials() {
+  try {
+    if (fs.existsSync(JSON_KEY_PATH)) {
+      const parsed = JSON.parse(fs.readFileSync(JSON_KEY_PATH, 'utf8'));
+      return { email: parsed.client_email, key: parsed.private_key };
+    }
+  } catch (e) {
+    console.error('Failed to read Google service account JSON file:', e.message);
+  }
+
+  // Fallback: two separate env vars (used for local .env dev, or hosts
+  // without a secret-file feature). The key is expected as one line with
+  // literal "\n" sequences, which are unescaped here.
+  return {
+    email: process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL,
+    key: (process.env.GOOGLE_SERVICE_ACCOUNT_KEY || '').replace(/\\n/g, '\n')
+  };
+}
+
+const credentials = loadCredentials();
+const enabled = Boolean(SHEET_ID && credentials.email && credentials.key);
 
 let client = null;
 function getClient() {
   if (!client) {
     client = new JWT({
-      email: SERVICE_ACCOUNT_EMAIL,
-      key: SERVICE_ACCOUNT_KEY,
+      email: credentials.email,
+      key: credentials.key,
       scopes: ['https://www.googleapis.com/auth/spreadsheets']
     });
   }
