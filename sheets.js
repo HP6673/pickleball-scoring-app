@@ -100,9 +100,10 @@ function buildRows(tournament, resolvedBracket) {
 
 // Overwrites the whole sheet tab with the current schedule + scores. Safe to
 // call often -- failures are logged and swallowed so a Sheets outage never
-// breaks the app itself.
+// breaks the app itself. Returns true only once the sheet is confirmed
+// updated, so callers can tell a real write from a silently-dropped one.
 async function pushTournament(tournament, resolvedBracket) {
-  if (!enabled) return;
+  if (!enabled) return false;
   try {
     const headers = await authHeaders();
 
@@ -121,9 +122,12 @@ async function pushTournament(tournament, resolvedBracket) {
     });
     if (!res.ok) {
       console.error('Google Sheets push failed:', res.status, await res.text());
+      return false;
     }
+    return true;
   } catch (e) {
     console.error('Google Sheets push failed:', e.message);
+    return false;
   }
 }
 

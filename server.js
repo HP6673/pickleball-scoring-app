@@ -560,7 +560,7 @@ app.post('/api/tournament', requireAdmin, async (req, res) => {
 
   try {
     await store.writeData({ tournament });
-    sheets.pushTournament(tournament, null);
+    pushToSheet(tournament, null);
     res.json({ tournament, standings: computeStandings(tournament), bracket: null });
   } catch (e) {
     console.error(e);
@@ -571,7 +571,7 @@ app.post('/api/tournament', requireAdmin, async (req, res) => {
 app.post('/api/tournament/reset', requireAdmin, async (req, res) => {
   try {
     await store.writeData({ tournament: null });
-    sheets.pushTournament(null, null);
+    pushToSheet(null, null);
     res.json({ ok: true });
   } catch (e) {
     console.error(e);
@@ -603,7 +603,7 @@ app.post('/api/games/:id/score/set', async (req, res) => {
 
   try {
     await store.writeData(data);
-    sheets.pushTournament(data.tournament, resolveBracket(data.tournament.bracket));
+    pushToSheet(data.tournament, resolveBracket(data.tournament.bracket));
     res.json({
       tournament: data.tournament,
       standings: computeStandings(data.tournament),
@@ -637,7 +637,7 @@ app.post('/api/bracket/generate', requireAdmin, async (req, res) => {
 
   try {
     await store.writeData(data);
-    sheets.pushTournament(data.tournament, resolveBracket(data.tournament.bracket));
+    pushToSheet(data.tournament, resolveBracket(data.tournament.bracket));
     res.json({
       tournament: data.tournament,
       standings,
@@ -657,7 +657,7 @@ app.post('/api/bracket/reset', requireAdmin, async (req, res) => {
 
   try {
     await store.writeData(data);
-    sheets.pushTournament(data.tournament, null);
+    pushToSheet(data.tournament, null);
     res.json({ tournament: data.tournament, standings: computeStandings(data.tournament), bracket: null });
   } catch (e) {
     console.error(e);
@@ -697,7 +697,7 @@ app.post('/api/bracket/games/:id/score/set', async (req, res) => {
 
   try {
     await store.writeData(data);
-    sheets.pushTournament(data.tournament, resolveBracket(data.tournament.bracket));
+    pushToSheet(data.tournament, resolveBracket(data.tournament.bracket));
     res.json({
       tournament: data.tournament,
       standings: computeStandings(data.tournament),
@@ -713,6 +713,42 @@ app.post('/api/bracket/games/:id/score/set', async (req, res) => {
 // Polls the sheet for score edits made directly there (rather than through
 // the app) and applies them the same way the score-set routes do.
 const SHEET_POLL_INTERVAL_MS = 10000;
+
+// What we last confirmed the sheet actually contains (keyed by "game-<id>" /
+// "bracket-<id>"). If a push to the sheet fails or hasn't landed yet, the
+// sheet can be *stale* rather than intentionally edited -- without this, the
+// next poll would read that stale value and clobber a newer score the app
+// just saved. Only a sheet value that differs from this snapshot counts as
+// a genuine external edit.
+let lastPushedSnapshot = null;
+
+function snapshotScores(tournament, resolvedBracket) {
+  const map = new Map();
+  if (!tournament) return map;
+  tournament.games.forEach(g => map.set(`game-${g.id}`, { scoreA: g.scoreA, scoreB: g.scoreB }));
+  if (resolvedBracket) {
+    resolvedBracket.rounds.forEach(r => {
+      r.games.forEach(g => {
+        if (g.ready) map.set(`bracket-${g.id}`, { scoreA: g.scoreA, scoreB: g.scoreB });
+      });
+    });
+  }
+  return map;
+}
+
+async function pushToSheet(tournament, resolvedBracket) {
+  const ok = await sheets.pushTournament(tournament, resolvedBracket);
+  if (ok) {
+    lastPushedSnapshot = snapshotScores(tournament, resolvedBracket);
+  }
+}
+
+function isGenuineSheetEdit(key, scoreA, scoreB) {
+  if (!lastPushedSnapshot) return true; // no baseline yet -- trust the sheet
+  const known = lastPushedSnapshot.get(key);
+  if (!known) return true; // never pushed this key before (e.g. a bracket game that just became ready)
+  return known.scoreA !== scoreA || known.scoreB !== scoreB;
+}
 
 async function syncScoresFromSheet() {
   if (!sheets.enabled) return;
@@ -733,6 +769,7 @@ async function syncScoresFromSheet() {
     const scoreB = Number(row.scoreB);
     if (!isValidScoreValue(scoreA) || !isValidScoreValue(scoreB)) return;
     if (scoreA === g.scoreA && scoreB === g.scoreB) return;
+    if (!isGenuineSheetEdit(`game-${g.id}`, scoreA, scoreB)) return;
     g.scoreA = scoreA;
     g.scoreB = scoreB;
     g.completed = isComplete(scoreA, scoreB);
@@ -753,6 +790,7 @@ async function syncScoresFromSheet() {
         const scoreB = Number(row.scoreB);
         if (!isValidScoreValue(scoreA) || !isValidScoreValue(scoreB)) return;
         if (scoreA === g.scoreA && scoreB === g.scoreB) return;
+        if (!isGenuineSheetEdit(`bracket-${g.id}`, scoreA, scoreB)) return;
         g.scoreA = scoreA;
         g.scoreB = scoreB;
         g.completed = isComplete(scoreA, scoreB);
@@ -763,6 +801,7 @@ async function syncScoresFromSheet() {
 
   if (changed) {
     await store.writeData(data);
+    lastPushedSnapshot = snapshotScores(data.tournament, resolveBracket(data.tournament.bracket));
     console.log('Applied score update(s) edited directly in the Google Sheet.');
   }
 }
@@ -774,7 +813,7 @@ store.init()
     });
     if (sheets.enabled) {
       const data = loadData();
-      sheets.pushTournament(data.tournament, data.tournament ? resolveBracket(data.tournament.bracket) : null);
+      pushToSheet(data.tournament, data.tournament ? resolveBracket(data.tournament.bracket) : null);
       setInterval(() => {
         syncScoresFromSheet().catch(e => console.error('Google Sheet sync failed:', e));
       }, SHEET_POLL_INTERVAL_MS);
