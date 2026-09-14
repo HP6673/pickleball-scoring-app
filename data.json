@@ -309,9 +309,9 @@
           17,
           18
         ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
+        "scoreA": 7,
+        "scoreB": 11,
+        "completed": true,
         "group": 1
       },
       {
