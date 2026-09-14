@@ -165,6 +165,69 @@ tbody tr:first-child {
 .diff-negative { color: var(--loss); font-weight: 700; }
 .diff-zero { color: var(--muted); font-weight: 700; }
 
+.bracket-champion {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--court-blue-dark);
+  background: linear-gradient(120deg, var(--ball-yellow), var(--gold));
+  padding: 10px 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.bracket-container {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.bracket-round {
+  flex: 0 0 210px;
+  display: flex;
+  flex-direction: column;
+}
+
+.bracket-round-heading {
+  margin: 0 0 12px;
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--court-teal);
+  text-align: center;
+}
+
+.bracket-game {
+  padding: 12px 14px;
+  margin-bottom: 16px;
+}
+.bracket-game .team-name { font-size: 1rem; }
+.bracket-game .score-value { font-size: 1.5rem; min-width: 30px; }
+.bracket-game.pending {
+  opacity: 0.6;
+  border-left-color: var(--line);
+}
+
+.bracket-status {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin: 0 0 14px;
+}
+
+.group-heading {
+  margin: 40px 0 6px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+  font-size: 1.3rem;
+  color: var(--court-blue-dark);
+  padding-bottom: 8px;
+  border-bottom: 3px solid var(--ball-yellow);
+}
+
 .round-heading {
   margin: 30px 0 14px;
   display: flex;
@@ -433,12 +496,30 @@ form input:focus, form select:focus {
 #rounds-field { grid-column: span 2; }
 
 .player-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   margin-bottom: 8px;
 }
-.player-grid label { margin-bottom: 0; }
+.player-grid-row {
+  display: grid;
+  gap: 8px 12px;
+  align-items: end;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+}
+.team-row-field { grid-template-columns: 1fr 1fr auto; }
+.player-row-field { grid-template-columns: 1fr auto; }
+.player-grid-row label { margin-bottom: 0; }
+.group-select-label { min-width: 108px; }
+.group-select-label select { margin-top: 5px; }
+
+@media (max-width: 480px) {
+  .team-row-field { grid-template-columns: 1fr; }
+  .player-row-field { grid-template-columns: 1fr; }
+  .group-select-label { min-width: 0; }
+}
 
 .modal-actions {
   display: flex;

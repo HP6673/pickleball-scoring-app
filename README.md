@@ -19,6 +19,7 @@ A live, mobile-friendly scoreboard for pickleball tournaments — set up players
 | 🔓 **Open scoring** | Anyone can update a score — no login needed courtside |
 | 🔒 **Hidden admin setup** | A quiet "admin" link gates tournament creation/reset behind a login |
 | 💾 **Zero-database backend** | Everything persists to a single `data.json` file — locally, or committed straight to this repo |
+| 📄 **Optional Google Sheet sync** | Mirror every score to a Google Sheet so scorekeepers can use either the app or the spreadsheet |
 
 ## 🚀 Getting Started
 
@@ -54,6 +55,29 @@ By default the server writes to a local `data.json` file, which many free hosts 
 | `GITHUB_FILE_PATH` | – | `data.json` | Path of the data file in the repo |
 
 Every tournament setup change and every score tap becomes a commit to this repo, so expect a busy commit history during a live tournament — that's expected. If `GITHUB_TOKEN` isn't set, the app just uses the local file as normal.
+
+### Optional: scoring from a Google Sheet too
+
+Every game (round robin and bracket) can also be mirrored to a Google Sheet, so scores can be entered either in the app **or** directly in the spreadsheet — useful if a scorekeeper prefers typing into a familiar grid. The app rewrites the sheet whenever a schedule or score changes, and polls it every 10 seconds for edits made the other way.
+
+| Variable | Required | Notes |
+|---|---|---|
+| `GOOGLE_SHEET_ID` | ✅ | The long ID in the sheet's URL: `https://docs.google.com/spreadsheets/d/`**`THIS_PART`**`/edit` |
+| `GOOGLE_SERVICE_ACCOUNT_EMAIL` | ✅ | The `...@...iam.gserviceaccount.com` address from your service account |
+| `GOOGLE_SERVICE_ACCOUNT_KEY` | ✅ | The service account's private key (see setup below). Set it as a secret env var — never commit it. |
+| `GOOGLE_SHEET_TAB` | – | Tab name to sync (default `Scores`) |
+
+**Setup (one-time):**
+
+1. In the [Google Cloud Console](https://console.cloud.google.com/), create a project (or reuse one) and enable the **Google Sheets API** for it (APIs & Services → Enable APIs and Services → search "Google Sheets API" → Enable).
+2. Go to APIs & Services → Credentials → **Create Credentials → Service Account**. Give it any name and finish the wizard (no roles needed).
+3. Open the new service account → **Keys** tab → **Add Key → Create new key → JSON**. This downloads a `.json` file — keep it private.
+4. From that JSON file, copy the `client_email` value → this is `GOOGLE_SERVICE_ACCOUNT_EMAIL`, and the `private_key` value → this is `GOOGLE_SERVICE_ACCOUNT_KEY` (paste it exactly as it appears, literal `\n` characters and all — it's stored escaped in the JSON file).
+5. Create a new Google Sheet (or use an existing one). Click **Share**, and share it with the `client_email` address from step 4, with **Editor** access.
+6. Copy the Sheet's ID out of its URL for `GOOGLE_SHEET_ID` (see the table above).
+7. Set the three env vars on your host (Render: Dashboard → your service → Environment) and restart the app. The server log will say `Google Sheet sync enabled...` once it picks them up; leave them unset and this feature is silently disabled.
+
+The app owns the sheet's layout (one row per game, with a `Key` column like `game-3` or `bracket-1`) and rewrites the whole tab on every change — don't reorder or delete the `Key` column, and don't add extra columns before `Score B`, or the sync will stop matching rows correctly. Only the `Score A` / `Score B` cells are read back from the sheet.
 
 ## 🏆 How It Works
 
