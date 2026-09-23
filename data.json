@@ -1,1567 +1,182 @@
 {
   "tournament": {
-    "format": "fixed",
-    "players": [
-      {
-        "id": 1,
-        "name": "W",
-        "group": 1
-      },
-      {
-        "id": 2,
-        "name": "H",
-        "group": 1
-      },
-      {
-        "id": 3,
-        "name": "H",
-        "group": 1
-      },
-      {
-        "id": 4,
-        "name": "Kk",
-        "group": 1
-      },
-      {
-        "id": 5,
-        "name": "Ffg",
-        "group": 1
-      },
-      {
-        "id": 6,
-        "name": "Hjjn",
-        "group": 1
-      },
-      {
-        "id": 7,
-        "name": "Nnn",
-        "group": 1
-      },
-      {
-        "id": 8,
-        "name": "Nbnii",
-        "group": 1
-      },
-      {
-        "id": 9,
-        "name": "Bbu",
-        "group": 1
-      },
-      {
-        "id": 10,
-        "name": "Unb",
-        "group": 1
-      },
-      {
-        "id": 11,
-        "name": "Hub",
-        "group": 1
-      },
-      {
-        "id": 12,
-        "name": "Fe",
-        "group": 1
-      },
-      {
-        "id": 13,
-        "name": "Nj",
-        "group": 1
-      },
-      {
-        "id": 14,
-        "name": "Wed",
-        "group": 1
-      },
-      {
-        "id": 15,
-        "name": "Rcf",
-        "group": 1
-      },
-      {
-        "id": 16,
-        "name": "Cfc",
-        "group": 1
-      },
-      {
-        "id": 17,
-        "name": "Cfvbb",
-        "group": 1
-      },
-      {
-        "id": 18,
-        "name": "Bbbb",
-        "group": 1
-      },
-      {
-        "id": 19,
-        "name": "Fybvh",
-        "group": 1
-      },
-      {
-        "id": 20,
-        "name": "Hbbhjbb",
-        "group": 1
-      },
-      {
-        "id": 21,
-        "name": "Nnn",
-        "group": 1
-      },
-      {
-        "id": 22,
-        "name": "Nuhhhn",
-        "group": 1
-      },
-      {
-        "id": 23,
-        "name": "Gunn",
-        "group": 1
-      },
-      {
-        "id": 24,
-        "name": "Jnn",
-        "group": 1
-      }
-    ],
-    "teams": [
-      {
-        "id": 1,
-        "name": "W / H",
-        "playerIds": [
-          1,
-          2
-        ],
-        "group": 1
-      },
-      {
-        "id": 2,
-        "name": "H / Kk",
-        "playerIds": [
-          3,
-          4
-        ],
-        "group": 1
-      },
-      {
-        "id": 3,
-        "name": "Ffg / Hjjn",
-        "playerIds": [
-          5,
-          6
-        ],
-        "group": 1
-      },
-      {
-        "id": 4,
-        "name": "Nnn / Nbnii",
-        "playerIds": [
-          7,
-          8
-        ],
-        "group": 1
-      },
-      {
-        "id": 5,
-        "name": "Bbu / Unb",
-        "playerIds": [
-          9,
-          10
-        ],
-        "group": 1
-      },
-      {
-        "id": 6,
-        "name": "Hub / Fe",
-        "playerIds": [
-          11,
-          12
-        ],
-        "group": 1
-      },
-      {
-        "id": 7,
-        "name": "Nj / Wed",
-        "playerIds": [
-          13,
-          14
-        ],
-        "group": 1
-      },
-      {
-        "id": 8,
-        "name": "Rcf / Cfc",
-        "playerIds": [
-          15,
-          16
-        ],
-        "group": 1
-      },
-      {
-        "id": 9,
-        "name": "Cfvbb / Bbbb",
-        "playerIds": [
-          17,
-          18
-        ],
-        "group": 1
-      },
-      {
-        "id": 10,
-        "name": "Fybvh / Hbbhjbb",
-        "playerIds": [
-          19,
-          20
-        ],
-        "group": 1
-      },
-      {
-        "id": 11,
-        "name": "Nnn / Nuhhhn",
-        "playerIds": [
-          21,
-          22
-        ],
-        "group": 1
-      },
-      {
-        "id": 12,
-        "name": "Gunn / Jnn",
-        "playerIds": [
-          23,
-          24
-        ],
-        "group": 1
-      }
-    ],
-    "games": [
-      {
-        "id": 1,
-        "round": 1,
-        "teamAId": 1,
-        "teamBId": 12,
-        "teamAName": "W / H",
-        "teamBName": "Gunn / Jnn",
-        "teamAPlayerIds": [
-          1,
-          2
-        ],
-        "teamBPlayerIds": [
-          23,
-          24
-        ],
-        "scoreA": 11,
-        "scoreB": 9,
-        "completed": true,
-        "group": 1
-      },
-      {
-        "id": 2,
-        "round": 1,
-        "teamAId": 2,
-        "teamBId": 11,
-        "teamAName": "H / Kk",
-        "teamBName": "Nnn / Nuhhhn",
-        "teamAPlayerIds": [
-          3,
-          4
-        ],
-        "teamBPlayerIds": [
-          21,
-          22
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 3,
-        "round": 1,
-        "teamAId": 3,
-        "teamBId": 10,
-        "teamAName": "Ffg / Hjjn",
-        "teamBName": "Fybvh / Hbbhjbb",
-        "teamAPlayerIds": [
-          5,
-          6
-        ],
-        "teamBPlayerIds": [
-          19,
-          20
-        ],
-        "scoreA": 11,
-        "scoreB": 6,
-        "completed": true,
-        "group": 1
-      },
-      {
-        "id": 4,
-        "round": 1,
-        "teamAId": 4,
-        "teamBId": 9,
-        "teamAName": "Nnn / Nbnii",
-        "teamBName": "Cfvbb / Bbbb",
-        "teamAPlayerIds": [
-          7,
-          8
-        ],
-        "teamBPlayerIds": [
-          17,
-          18
-        ],
-        "scoreA": 7,
-        "scoreB": 11,
-        "completed": true,
-        "group": 1
-      },
-      {
-        "id": 5,
-        "round": 1,
-        "teamAId": 5,
-        "teamBId": 8,
-        "teamAName": "Bbu / Unb",
-        "teamBName": "Rcf / Cfc",
-        "teamAPlayerIds": [
-          9,
-          10
-        ],
-        "teamBPlayerIds": [
-          15,
-          16
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 6,
-        "round": 1,
-        "teamAId": 6,
-        "teamBId": 7,
-        "teamAName": "Hub / Fe",
-        "teamBName": "Nj / Wed",
-        "teamAPlayerIds": [
-          11,
-          12
-        ],
-        "teamBPlayerIds": [
-          13,
-          14
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 7,
-        "round": 2,
-        "teamAId": 1,
-        "teamBId": 11,
-        "teamAName": "W / H",
-        "teamBName": "Nnn / Nuhhhn",
-        "teamAPlayerIds": [
-          1,
-          2
-        ],
-        "teamBPlayerIds": [
-          21,
-          22
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 8,
-        "round": 2,
-        "teamAId": 12,
-        "teamBId": 10,
-        "teamAName": "Gunn / Jnn",
-        "teamBName": "Fybvh / Hbbhjbb",
-        "teamAPlayerIds": [
-          23,
-          24
-        ],
-        "teamBPlayerIds": [
-          19,
-          20
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 9,
-        "round": 2,
-        "teamAId": 2,
-        "teamBId": 9,
-        "teamAName": "H / Kk",
-        "teamBName": "Cfvbb / Bbbb",
-        "teamAPlayerIds": [
-          3,
-          4
-        ],
-        "teamBPlayerIds": [
-          17,
-          18
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 10,
-        "round": 2,
-        "teamAId": 3,
-        "teamBId": 8,
-        "teamAName": "Ffg / Hjjn",
-        "teamBName": "Rcf / Cfc",
-        "teamAPlayerIds": [
-          5,
-          6
-        ],
-        "teamBPlayerIds": [
-          15,
-          16
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 11,
-        "round": 2,
-        "teamAId": 4,
-        "teamBId": 7,
-        "teamAName": "Nnn / Nbnii",
-        "teamBName": "Nj / Wed",
-        "teamAPlayerIds": [
-          7,
-          8
-        ],
-        "teamBPlayerIds": [
-          13,
-          14
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 12,
-        "round": 2,
-        "teamAId": 5,
-        "teamBId": 6,
-        "teamAName": "Bbu / Unb",
-        "teamBName": "Hub / Fe",
-        "teamAPlayerIds": [
-          9,
-          10
-        ],
-        "teamBPlayerIds": [
-          11,
-          12
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 13,
-        "round": 3,
-        "teamAId": 1,
-        "teamBId": 10,
-        "teamAName": "W / H",
-        "teamBName": "Fybvh / Hbbhjbb",
-        "teamAPlayerIds": [
-          1,
-          2
-        ],
-        "teamBPlayerIds": [
-          19,
-          20
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 14,
-        "round": 3,
-        "teamAId": 11,
-        "teamBId": 9,
-        "teamAName": "Nnn / Nuhhhn",
-        "teamBName": "Cfvbb / Bbbb",
-        "teamAPlayerIds": [
-          21,
-          22
-        ],
-        "teamBPlayerIds": [
-          17,
-          18
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 15,
-        "round": 3,
-        "teamAId": 12,
-        "teamBId": 8,
-        "teamAName": "Gunn / Jnn",
-        "teamBName": "Rcf / Cfc",
-        "teamAPlayerIds": [
-          23,
-          24
-        ],
-        "teamBPlayerIds": [
-          15,
-          16
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 16,
-        "round": 3,
-        "teamAId": 2,
-        "teamBId": 7,
-        "teamAName": "H / Kk",
-        "teamBName": "Nj / Wed",
-        "teamAPlayerIds": [
-          3,
-          4
-        ],
-        "teamBPlayerIds": [
-          13,
-          14
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 17,
-        "round": 3,
-        "teamAId": 3,
-        "teamBId": 6,
-        "teamAName": "Ffg / Hjjn",
-        "teamBName": "Hub / Fe",
-        "teamAPlayerIds": [
-          5,
-          6
-        ],
-        "teamBPlayerIds": [
-          11,
-          12
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 18,
-        "round": 3,
-        "teamAId": 4,
-        "teamBId": 5,
-        "teamAName": "Nnn / Nbnii",
-        "teamBName": "Bbu / Unb",
-        "teamAPlayerIds": [
-          7,
-          8
-        ],
-        "teamBPlayerIds": [
-          9,
-          10
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 19,
-        "round": 4,
-        "teamAId": 1,
-        "teamBId": 9,
-        "teamAName": "W / H",
-        "teamBName": "Cfvbb / Bbbb",
-        "teamAPlayerIds": [
-          1,
-          2
-        ],
-        "teamBPlayerIds": [
-          17,
-          18
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 20,
-        "round": 4,
-        "teamAId": 10,
-        "teamBId": 8,
-        "teamAName": "Fybvh / Hbbhjbb",
-        "teamBName": "Rcf / Cfc",
-        "teamAPlayerIds": [
-          19,
-          20
-        ],
-        "teamBPlayerIds": [
-          15,
-          16
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 21,
-        "round": 4,
-        "teamAId": 11,
-        "teamBId": 7,
-        "teamAName": "Nnn / Nuhhhn",
-        "teamBName": "Nj / Wed",
-        "teamAPlayerIds": [
-          21,
-          22
-        ],
-        "teamBPlayerIds": [
-          13,
-          14
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 22,
-        "round": 4,
-        "teamAId": 12,
-        "teamBId": 6,
-        "teamAName": "Gunn / Jnn",
-        "teamBName": "Hub / Fe",
-        "teamAPlayerIds": [
-          23,
-          24
-        ],
-        "teamBPlayerIds": [
-          11,
-          12
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 23,
-        "round": 4,
-        "teamAId": 2,
-        "teamBId": 5,
-        "teamAName": "H / Kk",
-        "teamBName": "Bbu / Unb",
-        "teamAPlayerIds": [
-          3,
-          4
-        ],
-        "teamBPlayerIds": [
-          9,
-          10
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 24,
-        "round": 4,
-        "teamAId": 3,
-        "teamBId": 4,
-        "teamAName": "Ffg / Hjjn",
-        "teamBName": "Nnn / Nbnii",
-        "teamAPlayerIds": [
-          5,
-          6
-        ],
-        "teamBPlayerIds": [
-          7,
-          8
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 25,
-        "round": 5,
-        "teamAId": 1,
-        "teamBId": 8,
-        "teamAName": "W / H",
-        "teamBName": "Rcf / Cfc",
-        "teamAPlayerIds": [
-          1,
-          2
-        ],
-        "teamBPlayerIds": [
-          15,
-          16
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 26,
-        "round": 5,
-        "teamAId": 9,
-        "teamBId": 7,
-        "teamAName": "Cfvbb / Bbbb",
-        "teamBName": "Nj / Wed",
-        "teamAPlayerIds": [
-          17,
-          18
-        ],
-        "teamBPlayerIds": [
-          13,
-          14
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 27,
-        "round": 5,
-        "teamAId": 10,
-        "teamBId": 6,
-        "teamAName": "Fybvh / Hbbhjbb",
-        "teamBName": "Hub / Fe",
-        "teamAPlayerIds": [
-          19,
-          20
-        ],
-        "teamBPlayerIds": [
-          11,
-          12
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 28,
-        "round": 5,
-        "teamAId": 11,
-        "teamBId": 5,
-        "teamAName": "Nnn / Nuhhhn",
-        "teamBName": "Bbu / Unb",
-        "teamAPlayerIds": [
-          21,
-          22
-        ],
-        "teamBPlayerIds": [
-          9,
-          10
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 29,
-        "round": 5,
-        "teamAId": 12,
-        "teamBId": 4,
-        "teamAName": "Gunn / Jnn",
-        "teamBName": "Nnn / Nbnii",
-        "teamAPlayerIds": [
-          23,
-          24
-        ],
-        "teamBPlayerIds": [
-          7,
-          8
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 30,
-        "round": 5,
-        "teamAId": 2,
-        "teamBId": 3,
-        "teamAName": "H / Kk",
-        "teamBName": "Ffg / Hjjn",
-        "teamAPlayerIds": [
-          3,
-          4
-        ],
-        "teamBPlayerIds": [
-          5,
-          6
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 31,
-        "round": 6,
-        "teamAId": 1,
-        "teamBId": 7,
-        "teamAName": "W / H",
-        "teamBName": "Nj / Wed",
-        "teamAPlayerIds": [
-          1,
-          2
-        ],
-        "teamBPlayerIds": [
-          13,
-          14
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 32,
-        "round": 6,
-        "teamAId": 8,
-        "teamBId": 6,
-        "teamAName": "Rcf / Cfc",
-        "teamBName": "Hub / Fe",
-        "teamAPlayerIds": [
-          15,
-          16
-        ],
-        "teamBPlayerIds": [
-          11,
-          12
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 33,
-        "round": 6,
-        "teamAId": 9,
-        "teamBId": 5,
-        "teamAName": "Cfvbb / Bbbb",
-        "teamBName": "Bbu / Unb",
-        "teamAPlayerIds": [
-          17,
-          18
-        ],
-        "teamBPlayerIds": [
-          9,
-          10
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 34,
-        "round": 6,
-        "teamAId": 10,
-        "teamBId": 4,
-        "teamAName": "Fybvh / Hbbhjbb",
-        "teamBName": "Nnn / Nbnii",
-        "teamAPlayerIds": [
-          19,
-          20
-        ],
-        "teamBPlayerIds": [
-          7,
-          8
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 35,
-        "round": 6,
-        "teamAId": 11,
-        "teamBId": 3,
-        "teamAName": "Nnn / Nuhhhn",
-        "teamBName": "Ffg / Hjjn",
-        "teamAPlayerIds": [
-          21,
-          22
-        ],
-        "teamBPlayerIds": [
-          5,
-          6
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 36,
-        "round": 6,
-        "teamAId": 12,
-        "teamBId": 2,
-        "teamAName": "Gunn / Jnn",
-        "teamBName": "H / Kk",
-        "teamAPlayerIds": [
-          23,
-          24
-        ],
-        "teamBPlayerIds": [
-          3,
-          4
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 37,
-        "round": 7,
-        "teamAId": 1,
-        "teamBId": 6,
-        "teamAName": "W / H",
-        "teamBName": "Hub / Fe",
-        "teamAPlayerIds": [
-          1,
-          2
-        ],
-        "teamBPlayerIds": [
-          11,
-          12
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 38,
-        "round": 7,
-        "teamAId": 7,
-        "teamBId": 5,
-        "teamAName": "Nj / Wed",
-        "teamBName": "Bbu / Unb",
-        "teamAPlayerIds": [
-          13,
-          14
-        ],
-        "teamBPlayerIds": [
-          9,
-          10
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 39,
-        "round": 7,
-        "teamAId": 8,
-        "teamBId": 4,
-        "teamAName": "Rcf / Cfc",
-        "teamBName": "Nnn / Nbnii",
-        "teamAPlayerIds": [
-          15,
-          16
-        ],
-        "teamBPlayerIds": [
-          7,
-          8
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 40,
-        "round": 7,
-        "teamAId": 9,
-        "teamBId": 3,
-        "teamAName": "Cfvbb / Bbbb",
-        "teamBName": "Ffg / Hjjn",
-        "teamAPlayerIds": [
-          17,
-          18
-        ],
-        "teamBPlayerIds": [
-          5,
-          6
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 41,
-        "round": 7,
-        "teamAId": 10,
-        "teamBId": 2,
-        "teamAName": "Fybvh / Hbbhjbb",
-        "teamBName": "H / Kk",
-        "teamAPlayerIds": [
-          19,
-          20
-        ],
-        "teamBPlayerIds": [
-          3,
-          4
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 42,
-        "round": 7,
-        "teamAId": 11,
-        "teamBId": 12,
-        "teamAName": "Nnn / Nuhhhn",
-        "teamBName": "Gunn / Jnn",
-        "teamAPlayerIds": [
-          21,
-          22
-        ],
-        "teamBPlayerIds": [
-          23,
-          24
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 43,
-        "round": 8,
-        "teamAId": 1,
-        "teamBId": 5,
-        "teamAName": "W / H",
-        "teamBName": "Bbu / Unb",
-        "teamAPlayerIds": [
-          1,
-          2
-        ],
-        "teamBPlayerIds": [
-          9,
-          10
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 44,
-        "round": 8,
-        "teamAId": 6,
-        "teamBId": 4,
-        "teamAName": "Hub / Fe",
-        "teamBName": "Nnn / Nbnii",
-        "teamAPlayerIds": [
-          11,
-          12
-        ],
-        "teamBPlayerIds": [
-          7,
-          8
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 45,
-        "round": 8,
-        "teamAId": 7,
-        "teamBId": 3,
-        "teamAName": "Nj / Wed",
-        "teamBName": "Ffg / Hjjn",
-        "teamAPlayerIds": [
-          13,
-          14
-        ],
-        "teamBPlayerIds": [
-          5,
-          6
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 46,
-        "round": 8,
-        "teamAId": 8,
-        "teamBId": 2,
-        "teamAName": "Rcf / Cfc",
-        "teamBName": "H / Kk",
-        "teamAPlayerIds": [
-          15,
-          16
-        ],
-        "teamBPlayerIds": [
-          3,
-          4
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 47,
-        "round": 8,
-        "teamAId": 9,
-        "teamBId": 12,
-        "teamAName": "Cfvbb / Bbbb",
-        "teamBName": "Gunn / Jnn",
-        "teamAPlayerIds": [
-          17,
-          18
-        ],
-        "teamBPlayerIds": [
-          23,
-          24
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 48,
-        "round": 8,
-        "teamAId": 10,
-        "teamBId": 11,
-        "teamAName": "Fybvh / Hbbhjbb",
-        "teamBName": "Nnn / Nuhhhn",
-        "teamAPlayerIds": [
-          19,
-          20
-        ],
-        "teamBPlayerIds": [
-          21,
-          22
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 49,
-        "round": 9,
-        "teamAId": 1,
-        "teamBId": 4,
-        "teamAName": "W / H",
-        "teamBName": "Nnn / Nbnii",
-        "teamAPlayerIds": [
-          1,
-          2
-        ],
-        "teamBPlayerIds": [
-          7,
-          8
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 50,
-        "round": 9,
-        "teamAId": 5,
-        "teamBId": 3,
-        "teamAName": "Bbu / Unb",
-        "teamBName": "Ffg / Hjjn",
-        "teamAPlayerIds": [
-          9,
-          10
-        ],
-        "teamBPlayerIds": [
-          5,
-          6
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 51,
-        "round": 9,
-        "teamAId": 6,
-        "teamBId": 2,
-        "teamAName": "Hub / Fe",
-        "teamBName": "H / Kk",
-        "teamAPlayerIds": [
-          11,
-          12
-        ],
-        "teamBPlayerIds": [
-          3,
-          4
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 52,
-        "round": 9,
-        "teamAId": 7,
-        "teamBId": 12,
-        "teamAName": "Nj / Wed",
-        "teamBName": "Gunn / Jnn",
-        "teamAPlayerIds": [
-          13,
-          14
-        ],
-        "teamBPlayerIds": [
-          23,
-          24
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 53,
-        "round": 9,
-        "teamAId": 8,
-        "teamBId": 11,
-        "teamAName": "Rcf / Cfc",
-        "teamBName": "Nnn / Nuhhhn",
-        "teamAPlayerIds": [
-          15,
-          16
-        ],
-        "teamBPlayerIds": [
-          21,
-          22
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 54,
-        "round": 9,
-        "teamAId": 9,
-        "teamBId": 10,
-        "teamAName": "Cfvbb / Bbbb",
-        "teamBName": "Fybvh / Hbbhjbb",
-        "teamAPlayerIds": [
-          17,
-          18
-        ],
-        "teamBPlayerIds": [
-          19,
-          20
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 55,
-        "round": 10,
-        "teamAId": 1,
-        "teamBId": 3,
-        "teamAName": "W / H",
-        "teamBName": "Ffg / Hjjn",
-        "teamAPlayerIds": [
-          1,
-          2
-        ],
-        "teamBPlayerIds": [
-          5,
-          6
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 56,
-        "round": 10,
-        "teamAId": 4,
-        "teamBId": 2,
-        "teamAName": "Nnn / Nbnii",
-        "teamBName": "H / Kk",
-        "teamAPlayerIds": [
-          7,
-          8
-        ],
-        "teamBPlayerIds": [
-          3,
-          4
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 57,
-        "round": 10,
-        "teamAId": 5,
-        "teamBId": 12,
-        "teamAName": "Bbu / Unb",
-        "teamBName": "Gunn / Jnn",
-        "teamAPlayerIds": [
-          9,
-          10
-        ],
-        "teamBPlayerIds": [
-          23,
-          24
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 58,
-        "round": 10,
-        "teamAId": 6,
-        "teamBId": 11,
-        "teamAName": "Hub / Fe",
-        "teamBName": "Nnn / Nuhhhn",
-        "teamAPlayerIds": [
-          11,
-          12
-        ],
-        "teamBPlayerIds": [
-          21,
-          22
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 59,
-        "round": 10,
-        "teamAId": 7,
-        "teamBId": 10,
-        "teamAName": "Nj / Wed",
-        "teamBName": "Fybvh / Hbbhjbb",
-        "teamAPlayerIds": [
-          13,
-          14
-        ],
-        "teamBPlayerIds": [
-          19,
-          20
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 60,
-        "round": 10,
-        "teamAId": 8,
-        "teamBId": 9,
-        "teamAName": "Rcf / Cfc",
-        "teamBName": "Cfvbb / Bbbb",
-        "teamAPlayerIds": [
-          15,
-          16
-        ],
-        "teamBPlayerIds": [
-          17,
-          18
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 61,
-        "round": 11,
-        "teamAId": 1,
-        "teamBId": 2,
-        "teamAName": "W / H",
-        "teamBName": "H / Kk",
-        "teamAPlayerIds": [
-          1,
-          2
-        ],
-        "teamBPlayerIds": [
-          3,
-          4
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 62,
-        "round": 11,
-        "teamAId": 3,
-        "teamBId": 12,
-        "teamAName": "Ffg / Hjjn",
-        "teamBName": "Gunn / Jnn",
-        "teamAPlayerIds": [
-          5,
-          6
-        ],
-        "teamBPlayerIds": [
-          23,
-          24
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 63,
-        "round": 11,
-        "teamAId": 4,
-        "teamBId": 11,
-        "teamAName": "Nnn / Nbnii",
-        "teamBName": "Nnn / Nuhhhn",
-        "teamAPlayerIds": [
-          7,
-          8
-        ],
-        "teamBPlayerIds": [
-          21,
-          22
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 64,
-        "round": 11,
-        "teamAId": 5,
-        "teamBId": 10,
-        "teamAName": "Bbu / Unb",
-        "teamBName": "Fybvh / Hbbhjbb",
-        "teamAPlayerIds": [
-          9,
-          10
-        ],
-        "teamBPlayerIds": [
-          19,
-          20
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 65,
-        "round": 11,
-        "teamAId": 6,
-        "teamBId": 9,
-        "teamAName": "Hub / Fe",
-        "teamBName": "Cfvbb / Bbbb",
-        "teamAPlayerIds": [
-          11,
-          12
-        ],
-        "teamBPlayerIds": [
-          17,
-          18
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      },
-      {
-        "id": 66,
-        "round": 11,
-        "teamAId": 7,
-        "teamBId": 8,
-        "teamAName": "Nj / Wed",
-        "teamBName": "Rcf / Cfc",
-        "teamAPlayerIds": [
-          13,
-          14
-        ],
-        "teamBPlayerIds": [
-          15,
-          16
-        ],
-        "scoreA": 0,
-        "scoreB": 0,
-        "completed": false,
-        "group": 1
-      }
-    ],
-    "createdAt": "2026-09-08T02:40:15.721Z",
+    "format": "rotating",
     "groups": [
       {
         "id": 1,
         "name": "Group A"
+      },
+      {
+        "id": 2,
+        "name": "Group B"
       }
-    ]
-  },
-  "title": "BATTLE OF THE PADDLES × MRSA"
+    ],
+    "players": [
+      {
+        "id": 1,
+        "name": "Syed",
+        "group": 1
+      },
+      {
+        "id": 2,
+        "name": "Salman S",
+        "group": 2
+      },
+      {
+        "id": 3,
+        "name": "Bilal",
+        "group": 1
+      },
+      {
+        "id": 4,
+        "name": "Hashmi",
+        "group": 2
+      },
+      {
+        "id": 5,
+        "name": "Nabeel",
+        "group": 1
+      },
+      {
+        "id": 6,
+        "name": "Smoothie",
+        "group": 2
+      },
+      {
+        "id": 7,
+        "name": "Abbasi",
+        "group": 1
+      },
+      {
+        "id": 8,
+        "name": "Ali Shahzad",
+        "group": 2
+      }
+    ],
+    "teams": [],
+    "games": [
+      {
+        "id": 1,
+        "group": 1,
+        "round": 1,
+        "teamAName": "Bilal / Nabeel",
+        "teamBName": "Abbasi / Syed",
+        "teamAPlayerIds": [
+          3,
+          5
+        ],
+        "teamBPlayerIds": [
+          7,
+          1
+        ],
+        "scoreA": 0,
+        "scoreB": 0,
+        "completed": false,
+        "sitOut": null,
+        "byeTeam": null
+      },
+      {
+        "id": 2,
+        "group": 1,
+        "round": 2,
+        "teamAName": "Nabeel / Syed",
+        "teamBName": "Abbasi / Bilal",
+        "teamAPlayerIds": [
+          5,
+          1
+        ],
+        "teamBPlayerIds": [
+          7,
+          3
+        ],
+        "scoreA": 0,
+        "scoreB": 0,
+        "completed": false,
+        "sitOut": null,
+        "byeTeam": null
+      },
+      {
+        "id": 3,
+        "group": 1,
+        "round": 3,
+        "teamAName": "Abbasi / Nabeel",
+        "teamBName": "Syed / Bilal",
+        "teamAPlayerIds": [
+          7,
+          5
+        ],
+        "teamBPlayerIds": [
+          1,
+          3
+        ],
+        "scoreA": 0,
+        "scoreB": 0,
+        "completed": false,
+        "sitOut": null,
+        "byeTeam": null
+      },
+      {
+        "id": 4,
+        "group": 2,
+        "round": 1,
+        "teamAName": "Smoothie / Ali Shahzad",
+        "teamBName": "Salman S / Hashmi",
+        "teamAPlayerIds": [
+          6,
+          8
+        ],
+        "teamBPlayerIds": [
+          2,
+          4
+        ],
+        "scoreA": 0,
+        "scoreB": 0,
+        "completed": false,
+        "sitOut": null,
+        "byeTeam": null
+      },
+      {
+        "id": 5,
+        "group": 2,
+        "round": 2,
+        "teamAName": "Hashmi / Ali Shahzad",
+        "teamBName": "Salman S / Smoothie",
+        "teamAPlayerIds": [
+          4,
+          8
+        ],
+        "teamBPlayerIds": [
+          2,
+          6
+        ],
+        "scoreA": 0,
+        "scoreB": 0,
+        "completed": false,
+        "sitOut": null,
+        "byeTeam": null
+      },
+      {
+        "id": 6,
+        "group": 2,
+        "round": 3,
+        "teamAName": "Salman S / Ali Shahzad",
+        "teamBName": "Hashmi / Smoothie",
+        "teamAPlayerIds": [
+          2,
+          8
+        ],
+        "teamBPlayerIds": [
+          4,
+          6
+        ],
+        "scoreA": 0,
+        "scoreB": 0,
+        "completed": false,
+        "sitOut": null,
+        "byeTeam": null
+      }
+    ],
+    "bracket": null,
+    "createdAt": "2026-09-23T21:27:54.404Z"
+  }
 }
